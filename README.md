@@ -1,17 +1,50 @@
-# Quartz v4
+# ZL's Notes
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Personal blog on AI, development, and technology.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+**Live at:** https://zl190.github.io/blog/
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Stack
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+- [Quartz 4](https://quartz.jzhao.xyz/) — Static site generator with backlinks and graph view
+- GitHub Pages — Hosting via GitHub Actions
 
-## Sponsors
+## Local Development
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+```bash
+npm install
+npx quartz build --serve
+# Open http://localhost:8080
+```
+
+## Adding a New Post
+
+1. Create markdown file in `content/` with frontmatter:
+   ```yaml
+   ---
+   title: "Your Post Title"
+   created: 2026-01-28
+   tags: [topic1, topic2]
+   ---
+   ```
+
+2. Commit and push:
+   ```bash
+   git add -A && git commit -m "Add: post title" && git push
+   ```
+
+3. GitHub Actions deploys automatically.
+
+## Features
+
+- **Explorer** — Posts sorted by date (newest first)
+- **Graph View** — Visualize connections between notes
+- **Backlinks** — See what links to the current page
+- **LaTeX** — Math rendering via KaTeX
+- **Collapsible sections** — Use `> [!note]- Title` for collapsed content
+- **Dark mode** — Toggle in header
+
+## License
+
+Content: All rights reserved
+Code: MIT (Quartz framework)
