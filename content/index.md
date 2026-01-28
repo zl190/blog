@@ -1,8 +1,8 @@
 ---
-title: ZL's Notes
+title: Y.C.Lab3
 ---
 
-Essays on technology, learning, and connected ideas.
+Lab notes on systems, AI, and learning.
 
 ## Posts
 
