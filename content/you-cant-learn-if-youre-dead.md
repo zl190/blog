@@ -148,14 +148,15 @@ TCP doesn't know which. So it uses AIMD:
 
 This creates the famous "sawtooth" pattern:
 
-```
-Rate
-  │    /\    /\    /\
-  │   /  \  /  \  /  \
-  │  /    \/    \/    \
-  │ /
-  └─────────────────────→ time
-```
+> [!note]- Sawtooth visualization
+> ```
+> Rate
+>   │    /\    /\    /\
+>   │   /  \  /  \  /  \
+>   │  /    \/    \/    \
+>   │ /
+>   └─────────────────────→ time
+> ```
 
 Aggressive when things go wrong would cause **congestion collapse**—everyone doubles down, network dies, everyone loses. That's Martingale for networks.
 
@@ -205,12 +206,12 @@ Next time you're tempted to double down—in gambling, investing, or life—reme
 
 Simulation code available at: [GitHub link]
 
-Key parameters:
-- 1000 simulations per scenario
-- 500 rounds per simulation
-- $100 initial bankroll
-- $1 base bet
-- Win probability: 48%, 50%, 52%
+> [!info]- Simulation parameters
+> - 1000 simulations per scenario
+> - 500 rounds per simulation
+> - $100 initial bankroll
+> - $1 base bet
+> - Win probability: 48%, 50%, 52%
 
 ---
 
