@@ -38,10 +38,28 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        // Sort by date (newest first), fallback to alphabetical
+        if (a.data?.date && b.data?.date) {
+          return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+        }
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        })
+      },
+    }),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        showTags: false,  // Hide tags from graph
+      },
+      globalGraph: {
+        showTags: false,  // Hide tags from global graph too
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
