@@ -171,6 +171,67 @@ Evidence *adds* to your belief in log-odds space. This is why logistic regressio
 
 Logistic regression isn't just "using sigmoid." It's Bayesian updating in log-odds space.
 
+## Full Circle: Back to TCP
+
+Here's where it gets delicious. Remember how this started with TCP AIMD? There's a newer algorithm called **TCP CUBIC** that replaces linear growth with a cubic polynomial. And understanding why CUBIC uses cubic instead of logistic brings everything together.
+
+### The CUBIC Equation
+
+$$W(t) = C(t - K)^3 + W_{max}$$
+
+Where:
+- $W(t)$ = window size at time $t$
+- $K$ = time to reach $W_{max}$
+- $W_{max}$ = window size when loss occurred
+- $C$ = aggressiveness parameter
+
+### Why Not Logistic?
+
+Both cubic and logistic are S-curves. So why did TCP choose cubic?
+
+The key difference is at the **inflection point**:
+- **Logistic**: maximum growth rate at inflection (aggressive → conservative)
+- **Cubic**: minimum growth rate at inflection (conservative → aggressive)
+
+TCP CUBIC places its inflection at $W_{max}$ — where it last detected congestion. This means:
+1. **Before $W_{max}$**: cautiously approaching the danger zone
+2. **At $W_{max}$**: most conservative (slowest growth)
+3. **After $W_{max}$**: aggressive again, probing for more bandwidth
+
+Logistic can't do this. It approaches $W_{max}$ as an asymptote — never exceeding it. But network capacity changes! CUBIC needs to probe past the old limit.
+
+```
+Logistic mindset: "Wmax is the ceiling"     (stuck forever)
+CUBIC mindset:    "Wmax is a checkpoint"    (probe beyond)
+```
+
+### Why Does e Appear in Logistic?
+
+This connects to the sigmoid derivation above. The number $e$ appears because:
+
+1. **Continuous growth**: If $\frac{dP}{dt} = rP$, solving gives $P = e^{rt}$
+2. **$e$ is special**: It's the only function that equals its own derivative
+3. **Logistic = bounded exponential**: Adding capacity limit $(1 - P/K)$ gives the logistic curve
+4. **Sigmoid = inverse of log-odds**: Since log-odds uses $\ln$ (base $e$), the inverse uses $e^{-x}$
+
+The unified view:
+
+$$
+\underbrace{P = e^{rt}}_{\text{exponential}} \rightarrow
+\underbrace{P = \frac{K}{1+e^{-rt}}}_{\text{logistic}} \rightarrow
+\underbrace{\sigma(x) = \frac{1}{1+e^{-x}}}_{\text{sigmoid}}
+$$
+
+All three: continuous growth, bounded growth, and log-odds inversion — lead to $e$.
+
+### The Irony
+
+I started with TCP AIMD, discovered odds and sigmoid, and now I'm back to TCP — but CUBIC instead of AIMD. And CUBIC explicitly rejects logistic in favor of cubic, precisely because of the inflection point behavior.
+
+The journey was: linear TCP → odds → sigmoid/logistic → back to TCP, which chose cubic *instead of* logistic.
+
+Full circle, with a twist.
+
 ## The Insight: Odds as Coordinate System
 
 Here's the meta-lesson.
@@ -200,7 +261,7 @@ One question: "Why does AIMD converge?"
 One thread, pulled honestly:
 
 ```
-TCP convergence
+TCP AIMD convergence
   → geometric reasoning (phase space)
   → "smaller gains more proportionally"
   → ratio vs proportion
@@ -209,6 +270,9 @@ TCP convergence
   → sigmoid (derived, not memorized)
   → Bayesian updating
   → "it's all coordinate systems"
+  → TCP CUBIC (why cubic, not logistic?)
+  → e in continuous growth
+  → full circle!
 ```
 
 Four domains. One underlying idea.
