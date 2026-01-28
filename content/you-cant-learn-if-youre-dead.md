@@ -197,7 +197,7 @@ But the simulations don't lie:
 
 **You can't learn if you're dead.**
 
-Next time you're tempted to double down—in gambling, investing, or life—remember what the Internet knows: survive first, optimize later.
+Next time you're tempted to double down—in gambling, investing, or life—remember what the Internet knows: survive, learn, then win.
 
 ---
 
