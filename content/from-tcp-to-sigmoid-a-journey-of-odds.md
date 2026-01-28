@@ -91,18 +91,19 @@ Different formulas. But they convert to each other:
 $$p = \frac{r}{1+r} \quad \text{(proportion from ratio)}$$
 $$r = \frac{p}{1-p} \quad \text{(ratio from proportion)}$$
 
-I derived the second one on paper:
+The key result: $r = \frac{p}{1-p}$ — this is called "odds" in statistics.
 
-$$
-\begin{aligned}
-p &= \frac{r}{1+r} \\
-p(1+r) &= r \\
-p + pr &= r \\
-p &= r - pr \\
-p &= r(1-p) \\
-r &= \frac{p}{1-p}
-\end{aligned}
-$$
+> [!note]- Derivation
+> $$
+> \begin{aligned}
+> p &= \frac{r}{1+r} \\
+> p(1+r) &= r \\
+> p + pr &= r \\
+> p &= r - pr \\
+> p &= r(1-p) \\
+> r &= \frac{p}{1-p}
+> \end{aligned}
+> $$
 
 This is called "odds" in statistics. Probability 25% = odds 1:3.
 
@@ -132,20 +133,20 @@ $$
 
 This $z = \log\left(\frac{p}{1-p}\right)$ is called **logit**.
 
-Now, how do we transform back? I worked through it on a whiteboard:
+Now, how do we transform back? The answer is the sigmoid: $p = \frac{1}{1+e^{-z}}$
 
-$$
-\begin{aligned}
-z &= \log(r) \\
-r &= e^z & &\text{inverse log} \\
-p &= \frac{r}{1+r} & &\text{odds to probability (from earlier!)} \\
-p &= \frac{e^z}{1+e^z} & &\text{substitute}
-\end{aligned}
-$$
-
-Divide top and bottom by $e^z$:
-
-$$p = \frac{1}{1+e^{-z}}$$
+> [!note]- Derivation
+> $$
+> \begin{aligned}
+> z &= \log(r) \\
+> r &= e^z & &\text{inverse log} \\
+> p &= \frac{r}{1+r} & &\text{odds to probability (from earlier!)} \\
+> p &= \frac{e^z}{1+e^z} & &\text{substitute}
+> \end{aligned}
+> $$
+>
+> Divide top and bottom by $e^z$:
+> $$p = \frac{1}{1+e^{-z}}$$
 
 **That's the sigmoid function.** I didn't look it up. It fell out of the math.
 

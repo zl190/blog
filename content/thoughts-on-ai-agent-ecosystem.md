@@ -70,40 +70,39 @@ When Claude Code runs `git status`, it calls the built-in Bash tool to execute t
 
 ### Deep Dive: Claude Code's Tool Architecture
 
-**From Claude model's perspective**, native tools and MCP tools look the same—both are called via Anthropic's **Tool Use API**:
+**From Claude model's perspective**, native tools and MCP tools look the same—both are called via Anthropic's **Tool Use API**. The difference is in implementation.
 
-```
-Claude model outputs:
-{
-  "type": "tool_use",
-  "name": "Bash",
-  "input": {"command": "git status"}
-}
-```
-
-**The difference is in implementation**:
-
-```
-┌─────────────────────────────────────────────────────┐
-│                   Claude Model                       │
-│              (outputs tool_use requests)             │
-└─────────────────────┬───────────────────────────────┘
-                      │ Tool Use API
-                      ▼
-┌─────────────────────────────────────────────────────┐
-│               Claude Code (Host)                     │
-│   ┌─────────────────┐    ┌─────────────────────┐   │
-│   │  Native Tools   │    │    MCP Client       │   │
-│   │  (TypeScript)   │    │         │           │   │
-│   │  Bash → exec()  │    │         ▼           │   │
-│   │  Read → fs.read │    │   MCP Protocol      │   │
-│   └─────────────────┘    └─────────┬───────────┘   │
-└─────────────────────────────────────┼───────────────┘
-                                      ▼
-                            ┌─────────────────┐
-                            │   MCP Servers   │
-                            └─────────────────┘
-```
+> [!info]- Architecture diagram
+> ```
+> Claude model outputs:
+> {
+>   "type": "tool_use",
+>   "name": "Bash",
+>   "input": {"command": "git status"}
+> }
+> ```
+>
+> ```
+> ┌─────────────────────────────────────────────────────┐
+> │                   Claude Model                       │
+> │              (outputs tool_use requests)             │
+> └─────────────────────┬───────────────────────────────┘
+>                       │ Tool Use API
+>                       ▼
+> ┌─────────────────────────────────────────────────────┐
+> │               Claude Code (Host)                     │
+> │   ┌─────────────────┐    ┌─────────────────────┐   │
+> │   │  Native Tools   │    │    MCP Client       │   │
+> │   │  (TypeScript)   │    │         │           │   │
+> │   │  Bash → exec()  │    │         ▼           │   │
+> │   │  Read → fs.read │    │   MCP Protocol      │   │
+> │   └─────────────────┘    └─────────┬───────────┘   │
+> └─────────────────────────────────────┼───────────────┘
+>                                       ▼
+>                             ┌─────────────────┐
+>                             │   MCP Servers   │
+>                             └─────────────────┘
+> ```
 
 ### Why Not Unify Everything with MCP?
 
@@ -258,37 +257,40 @@ Local model + MCP = Fully offline AI Agent. Here's the architecture:
 └──────────────────┴──────────────────────┘
 ```
 
-**Step 1: Install Ollama + model**
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-ollama pull qwen2.5:7b  # or llama3.2, mistral, etc.
-```
+Run `mcphost -m ollama:qwen2.5:7b --config ./mcp-config.json` and you have a fully offline AI Agent.
 
-**Step 2: Install MCPHost**
-```bash
-go install github.com/mark3labs/mcphost@latest
-```
-
-**Step 3: Create MCP config** (`mcp-config.json`)
-```json
-{
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/user/documents"]
-    },
-    "sqlite": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sqlite", "~/data.db"]
-    }
-  }
-}
-```
-
-**Step 4: Run**
-```bash
-mcphost -m ollama:qwen2.5:7b --config ./mcp-config.json
-```
+> [!note]- Setup steps
+> **Step 1: Install Ollama + model**
+> ```bash
+> curl -fsSL https://ollama.com/install.sh | sh
+> ollama pull qwen2.5:7b  # or llama3.2, mistral, etc.
+> ```
+>
+> **Step 2: Install MCPHost**
+> ```bash
+> go install github.com/mark3labs/mcphost@latest
+> ```
+>
+> **Step 3: Create MCP config** (`mcp-config.json`)
+> ```json
+> {
+>   "mcpServers": {
+>     "filesystem": {
+>       "command": "npx",
+>       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/user/documents"]
+>     },
+>     "sqlite": {
+>       "command": "npx",
+>       "args": ["-y", "@modelcontextprotocol/server-sqlite", "~/data.db"]
+>     }
+>   }
+> }
+> ```
+>
+> **Step 4: Run**
+> ```bash
+> mcphost -m ollama:qwen2.5:7b --config ./mcp-config.json
+> ```
 
 Now you have a fully offline AI Agent that can:
 - Read/write files (filesystem MCP)

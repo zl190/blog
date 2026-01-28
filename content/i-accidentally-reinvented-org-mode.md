@@ -261,41 +261,40 @@ The vision is now real: Claude Code orchestrates, Emacs executes, Obsidian displ
 
 ### Update 2: Four-Way Benchmark (Native vs Shell vs MCP)
 
-I found an existing MCP server for Emacs (vivekhaldar/emacs-mcp-server) and thought: can we do better? So I built my own in 113 lines of Python. Then I benchmarked all four approaches:
+I benchmarked four approaches. **The real insight:** 8ms is imperceptible to humans. You're "paying" 8ms to access 40 years of org-mode features.
 
-```
-┌───────────────────────────────────────────────────────────────────────┐
-│                       BENCHMARK RESULTS                               │
-├───────────────────────────────────────────────────────────────────────┤
-│ METHOD              │ STATUS  │ CLOCK IN│ HABITS  │ FULL    │ RATIO  │
-├─────────────────────┼─────────┼─────────┼─────────┼─────────┼────────┤
-│ Native (JSON/MD)    │ 0.03ms  │  0.4ms  │   N/A   │  0.6ms  │   1x   │
-│ Shell (emacsclient) │  7.5ms  │  ~8ms   │ 10.2ms  │  ~24ms  │  ~40x  │
-│ MCP External        │  ~8ms   │  ~8ms   │ ~11ms   │  ~24ms  │  ~40x  │
-│ MCP Ours            │  ~8ms   │  ~8ms   │ ~11ms   │  ~24ms  │  ~40x  │
-└─────────────────────┴─────────┴─────────┴─────────┴─────────┴────────┘
-```
-
-**Wait, is this fair?** Not really. The 40x difference isn't Emacs being slow—it's the cost of crossing process boundaries:
-
-| Component | Time |
-|-----------|------|
-| Actual work (file I/O) | ~0.1ms (same for all methods) |
-| IPC overhead (subprocess + protocol) | ~8ms per call |
-
-Native writes directly to disk. Shell/MCP must: spawn subprocess → connect to Emacs → execute elisp → return result. That ~8ms is communication tax, not slowness.
-
-**The real insight:** 8ms is imperceptible to humans. You're "paying" 8ms to access 40 years of org-mode features.
-
-**MCP's win:** Parallel calls amortize the overhead. 9 sequential shell calls = ~75ms. Same 9 calls batched through MCP = ~15ms (they run concurrently).
-
-| Aspect | Native | Shell | MCP External | MCP Ours |
-|--------|--------|-------|--------------|----------|
-| Actual work | ~0.1ms | ~0.1ms | ~0.1ms | ~0.1ms |
-| IPC overhead | 0ms | ~8ms | ~8ms | ~8ms |
-| Features | Basic | Full org | Full org | Full org |
-| Habits | No | Yes | Yes | Yes |
-| Parallelism | Yes | No | Yes | Yes |
+> [!info]- Benchmark details
+> ```
+> ┌───────────────────────────────────────────────────────────────────────┐
+> │                       BENCHMARK RESULTS                               │
+> ├───────────────────────────────────────────────────────────────────────┤
+> │ METHOD              │ STATUS  │ CLOCK IN│ HABITS  │ FULL    │ RATIO  │
+> ├─────────────────────┼─────────┼─────────┼─────────┼─────────┼────────┤
+> │ Native (JSON/MD)    │ 0.03ms  │  0.4ms  │   N/A   │  0.6ms  │   1x   │
+> │ Shell (emacsclient) │  7.5ms  │  ~8ms   │ 10.2ms  │  ~24ms  │  ~40x  │
+> │ MCP External        │  ~8ms   │  ~8ms   │ ~11ms   │  ~24ms  │  ~40x  │
+> │ MCP Ours            │  ~8ms   │  ~8ms   │ ~11ms   │  ~24ms  │  ~40x  │
+> └─────────────────────┴─────────┴─────────┴─────────┴─────────┴────────┘
+> ```
+>
+> **Wait, is this fair?** Not really. The 40x difference isn't Emacs being slow—it's the cost of crossing process boundaries:
+>
+> | Component | Time |
+> |-----------|------|
+> | Actual work (file I/O) | ~0.1ms (same for all methods) |
+> | IPC overhead (subprocess + protocol) | ~8ms per call |
+>
+> Native writes directly to disk. Shell/MCP must: spawn subprocess → connect to Emacs → execute elisp → return result. That ~8ms is communication tax, not slowness.
+>
+> **MCP's win:** Parallel calls amortize the overhead. 9 sequential shell calls = ~75ms. Same 9 calls batched through MCP = ~15ms (they run concurrently).
+>
+> | Aspect | Native | Shell | MCP External | MCP Ours |
+> |--------|--------|-------|--------------|----------|
+> | Actual work | ~0.1ms | ~0.1ms | ~0.1ms | ~0.1ms |
+> | IPC overhead | 0ms | ~8ms | ~8ms | ~8ms |
+> | Features | Basic | Full org | Full org | Full org |
+> | Habits | No | Yes | Yes | Yes |
+> | Parallelism | Yes | No | Yes | Yes |
 
 **Conclusion:** The "speed difference" is IPC overhead, not real work. 8ms is imperceptible. Use Emacs for features, build your own MCP for control.
 
