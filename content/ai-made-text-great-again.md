@@ -26,27 +26,25 @@ tags:
 - Composability: small tools that do one thing well
 - Version control: `git diff` your documents, not binary blobs
 
-```markdown
-I found a linux book in my freshman year from library. since then I became a fan of unix philosophy. everything is a file, text is the universal interface. simple and beautiful.
-
-However, the learning curve is steep. there are so many tools to learn and so many flags to remember before you become as efficient as you were with GUI. I never really stick to text-based workflow for long.
-
-switching feels like learing writing with your non-dominant hand - you know what you want, but you become slow and clumsy. Until recently, with the help of AI assistants, I finally found a way to make text-based workflow enjoyable and productive.
-```
+> [!note]- Personal backstory
+> I found a linux book in my freshman year from library. Since then I became a fan of Unix philosophy — everything is a file, text is the universal interface. Simple and beautiful.
+>
+> However, the learning curve is steep. There are so many tools to learn and so many flags to remember before you become as efficient as you were with GUI. I never really stuck to text-based workflow for long.
+>
+> Switching feels like learning writing with your non-dominant hand — you know what you want, but you become slow and clumsy. Until recently, with the help of AI assistants, I finally found a way to make text-based workflow enjoyable and productive.
 
 ### The AI Renaissance
 - LLMs are text-native: they read text, generate text, transform text
 - Cloud tools (Overleaf, Google Docs) lock you out of this
 - Local text files + AI = the workflow Unix designers dreamed of
 
+> [!note]- The deeper insight
+> LLMs fit perfectly with Unix philosophy — they're text-native. Without the need of rigid rule-based systems, they read text, generate text, transform text. AI understands content and handles format conversions (txt, md, latex) naturally.
+>
+> Cloud-based writing services provide convenience, but they wall you off from your local environment, limiting flexibility to combine AI with the Linux ecosystem's decades of battle-tested tools.
+>
+> Claude Code is the application layer upon Linux, just like TLS upon TCP. With local text files and custom agent skills, the learning curve finally flattens. The dream workflow that Unix philosophy envisioned is now within reach.
 
-```markdown
-fitting perfectly with unix philosophy, LLM are text-native. without the need of rigid rule-based system, they read text, generate text, transform text. AI understands content and handles format conversions (txt, md, latex) naturally.
-
-cloud-based writing services provide convenience to writing or AI, but they wall you off from your local environment, so you have limited flexible to combine the two, especially the linux ecosystem, in which the tools (which can be used through agent) has built over decades. claude code is the application layer upon linux, just like TLS upon TCP.
-
-with local text files and most recent agent, custom command and skills of LLM (which allows you to customize your workflow and tool usage), which largely flatten the learning curve, you can finally enjoy the dream workflow unix/linux philosophy envisioned long ago.
-```
 ---
 
 ## 2. Trigger: Overleaf → Local LaTeX
