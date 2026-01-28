@@ -1,0 +1,1 @@
+/Users/zl190/Documents/Obsidian/Note/4-published/zk-first-adding-action-without-losing-knowledge.md

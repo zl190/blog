@@ -1,0 +1,1 @@
+/Users/zl190/Documents/Obsidian/Note/4-published/i-accidentally-reinvented-org-mode.md
