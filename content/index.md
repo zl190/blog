@@ -2,7 +2,7 @@
 title: Y.C.Lab3
 ---
 
-Lab notes on systems, AI, and learning.
+Notes on systems, AI, and learning.
 
 ## Posts
 
