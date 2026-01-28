@@ -2,6 +2,8 @@
 
 [![Deploy](https://github.com/zl190/blog/actions/workflows/deploy.yml/badge.svg)](https://github.com/zl190/blog/actions/workflows/deploy.yml)
 [![Quartz](https://img.shields.io/badge/Quartz-v4.5-blue)](https://quartz.jzhao.xyz/)
+[![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-cc785c)](https://claude.ai)
+[![AI Assisted](https://img.shields.io/badge/AI-Assisted-blueviolet)](https://anthropic.com)
 [![License](https://img.shields.io/badge/content-All%20Rights%20Reserved-red)](LICENSE.txt)
 
 Personal blog on AI, development, and technology.
