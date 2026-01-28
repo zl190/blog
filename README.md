@@ -1,5 +1,9 @@
 # ZL's Notes
 
+[![Deploy](https://github.com/zl190/blog/actions/workflows/deploy.yml/badge.svg)](https://github.com/zl190/blog/actions/workflows/deploy.yml)
+[![Quartz](https://img.shields.io/badge/Quartz-v4.5-blue)](https://quartz.jzhao.xyz/)
+[![License](https://img.shields.io/badge/content-All%20Rights%20Reserved-red)](LICENSE.txt)
+
 Personal blog on AI, development, and technology.
 
 **Live at:** https://zl190.github.io/blog/
