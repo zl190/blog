@@ -367,7 +367,7 @@ $$
 
 ## 在线体验
 
-→ **[计算人文 Demo](https://wuxing-demo-4o4bbkotav4uwjdasqwlb9.streamlit.app/?tab=原理)** — 交互式探索压缩过程与干预实验
+→ **[计算人文 Demo](https://wuxing-demo-4o4bbkotav4uwjdasqwlb9.streamlit.app/?tab=lab)** — 交互式探索压缩过程与干预实验
 
 → **[GitHub Repo](https://github.com/zl190/wuxing-demo)** — 完整代码
 
