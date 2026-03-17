@@ -2,7 +2,7 @@
 title: "Physical vs Conceptual File Organization"
 type: draft
 format: blog
-status: published
+status: draft
 published_url: https://zl190.github.io/blog/posts/physical-vs-conceptual-file-organization/
 published_date: 2026-01-27
 created: 2026-01-17

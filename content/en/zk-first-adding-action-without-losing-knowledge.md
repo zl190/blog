@@ -4,7 +4,7 @@ type: draft
 format: blog
 lang: en
 created: 2026-01-20
-status: published
+status: draft
 published_url: https://zl190.github.io/blog/posts/zk-first-adding-action-without-losing-knowledge/
 published_date: 2026-01-27
 tags: [zettelkasten, pkm, productivity, emacs, org-mode]
