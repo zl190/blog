@@ -2,7 +2,7 @@
 title: "I Accidentally Reinvented org-mode"
 type: draft
 format: blog
-status: published
+status: draft
 published_url: https://zl190.github.io/blog/posts/i-accidentally-reinvented-org-mode/
 published_date: 2026-01-27
 created: 2026-01-19
