@@ -2,6 +2,7 @@
 title: "用图神经网络的视角理解五行：一个形式化框架"
 type: blog
 status: draft
+draft: true
 published_date: 2026-02-07
 created: 2026-02-07
 tags:

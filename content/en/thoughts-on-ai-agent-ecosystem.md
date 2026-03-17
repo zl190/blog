@@ -3,6 +3,7 @@ title: "Thoughts on AI Agent Ecosystem"
 type: draft
 format: blog
 status: draft
+draft: true
 created: 2026-01-12
 language: en
 tags: [agent, ai, ecosystem]
