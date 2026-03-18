@@ -7,7 +7,7 @@ Notes on systems, AI, and learning.
 ## English
 
 - [[en/tailscale-ping-works-everything-else-doesnt|tailscale ping works, everything else doesn't: the CGNAT routing trap]]
-- [[en/i-ab-tested-pua-plugin|I A/B Tested the PUA Plugin and Found a Blind Spot]]
+- [I A/B Tested the PUA Plugin and Found a Blind Spot](en/i-ab-tested-pua-plugin)
 - [[en/from-tcp-to-sigmoid-a-journey-of-odds|From TCP to Sigmoid: A Journey of Odds]]
 - [[en/you-cant-learn-if-youre-dead|You Can't Learn If You're Dead]]
 - [[en/zk-first-adding-action-without-losing-knowledge|ZK-First: Adding Action Without Losing Knowledge]]
