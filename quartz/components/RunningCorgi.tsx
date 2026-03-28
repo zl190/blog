@@ -34,6 +34,12 @@ export default ((userOpts?: Partial<Options>) => {
         data-cfg={JSON.stringify(opts)}
       >
         <span class="running-corgi" />
+        <button class="turbo-bar" title="Turbo!">
+          <span class="turbo-label">TURBO</span>
+          <span class="turbo-track">
+            <span class="turbo-fill" />
+          </span>
+        </button>
       </div>
     )
   }

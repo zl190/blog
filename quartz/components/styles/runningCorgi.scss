@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 40px;
+  height: 48px;
   pointer-events: none;
   z-index: 2;
   overflow: hidden;
@@ -19,10 +19,67 @@
   display: inline-block;
 }
 
-// Sprite mode: frame animation via steps()
 .running-corgi.sprite-mode {
   background-repeat: no-repeat;
-  // spriteSheet, backgroundSize, width, height set by JS
+}
+
+// Turbo bar — top-right corner, clickable
+.turbo-bar {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  padding: 2px 8px;
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.turbo-active {
+    opacity: 0.8;
+    border-color: var(--secondary);
+
+    .turbo-label {
+      color: var(--secondary);
+    }
+
+    .turbo-fill {
+      background: var(--secondary);
+    }
+  }
+}
+
+.turbo-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--gray);
+  user-select: none;
+}
+
+.turbo-track {
+  width: 32px;
+  height: 6px;
+  background: var(--lightgray);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.turbo-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--gray);
+  border-radius: 3px;
+  transition: width 0.3s ease;
 }
 
 .running-corgi-banner.art-hidden {
@@ -31,6 +88,11 @@
 
 @media all and ($mobile) {
   .running-corgi-banner {
-    height: 32px;
+    height: 40px;
+  }
+
+  .turbo-bar {
+    top: 4px;
+    right: 8px;
   }
 }

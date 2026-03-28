@@ -11,6 +11,8 @@ interface RunningCorgiConfig {
 document.addEventListener("nav", () => {
   const banner = document.querySelector(".running-corgi-banner") as HTMLElement | null
   const corgi = document.querySelector(".running-corgi") as HTMLElement | null
+  const turbo = document.querySelector(".turbo-bar") as HTMLElement | null
+  const turboFill = document.querySelector(".turbo-fill") as HTMLElement | null
   if (!banner || !corgi) return
 
   const raw = banner.dataset.cfg
@@ -27,6 +29,14 @@ document.addEventListener("nav", () => {
   const isMobile = window.innerWidth <= 800
   const useSprite = !!cfg.spriteSheet
 
+  // Speed states: walk (default) vs turbo
+  const WALK_SPEED = cfg.speed * 2      // slow: 2x the configured speed
+  const TURBO_SPEED = cfg.speed * 0.6   // fast: 60% of configured
+  const WALK_FRAME_RATE = "0.8s"        // slow leg animation
+  const TURBO_FRAME_RATE = "0.25s"      // fast leg animation
+  let turboMode = false
+  let currentSpeed = WALK_SPEED
+
   if (useSprite) {
     const scale = isMobile ? 0.75 : 1
     const fw = Math.round(cfg.spriteFrameWidth * scale)
@@ -40,7 +50,6 @@ document.addEventListener("nav", () => {
     corgi.style.backgroundImage = `url('${cfg.spriteSheet}')`
     corgi.style.backgroundSize = `${totalW}px ${fh}px`
 
-    // Inject keyframes once — never touch animation property again after setting
     if (!document.getElementById("corgi-keyframes")) {
       const s = document.createElement("style")
       s.id = "corgi-keyframes"
@@ -52,8 +61,8 @@ document.addEventListener("nav", () => {
       `
       document.head.appendChild(s)
     }
-    // Set animation ONCE — never reassign
-    corgi.style.animation = `corgi-sprint 0.5s steps(${cfg.spriteFrames}) infinite`
+    // Start with walk speed
+    corgi.style.animation = `corgi-sprint ${WALK_FRAME_RATE} steps(${cfg.spriteFrames}) infinite`
   } else {
     corgi.classList.remove("sprite-mode")
     const now = new Date()
@@ -69,42 +78,59 @@ document.addEventListener("nav", () => {
     corgi.style.fontSize = `${size}px`
   }
 
+  // Turbo bar toggle
+  if (turbo) {
+    const handleTurbo = () => {
+      turboMode = !turboMode
+      currentSpeed = turboMode ? TURBO_SPEED : WALK_SPEED
+
+      if (turboFill) {
+        turboFill.style.width = turboMode ? "100%" : "0%"
+      }
+      turbo.classList.toggle("turbo-active", turboMode)
+
+      // Update sprite frame rate (this is OK to reassign — it's user-triggered, not per-frame)
+      if (useSprite) {
+        const rate = turboMode ? TURBO_FRAME_RATE : WALK_FRAME_RATE
+        corgi!.style.animation = `corgi-sprint ${rate} steps(${cfg.spriteFrames}) infinite`
+      }
+    }
+    turbo.addEventListener("click", handleTurbo)
+    window.addCleanup(() => turbo.removeEventListener("click", handleTurbo))
+  }
+
   // Horizontal movement — continuous loop
   let animFrame: number | null = null
   let startTime: number | null = null
   let goingRight = true
   const totalDist = window.innerWidth + 80
-  const legDuration = cfg.speed
 
   function tick(timestamp: number) {
     if (startTime === null) startTime = timestamp
     const elapsed = (timestamp - startTime) / 1000
 
-    if (elapsed >= legDuration) {
-      // Switch direction — only change transform, NOT animation
+    if (elapsed >= currentSpeed) {
       goingRight = !goingRight
       startTime = timestamp
       animFrame = requestAnimationFrame(tick)
       return
     }
 
-    const progress = elapsed / legDuration
+    const progress = elapsed / currentSpeed
     let x: number
     if (goingRight) {
-      // Sprite faces RIGHT by default — no flip needed
       x = -40 + progress * totalDist
       corgi!.style.transform = "translateY(-50%)"
     } else {
-      // Returning left — flip horizontally
       x = totalDist - 40 - progress * totalDist
       corgi!.style.transform = "translateY(-50%) scaleX(-1)"
     }
 
     corgi!.style.left = `${x}px`
 
-    // Emoji bounce (sprite already has built-in bounce)
     if (!useSprite) {
-      const bounceY = Math.sin(elapsed * 5 * 2 * Math.PI) * 4
+      const freq = turboMode ? 8 : 3
+      const bounceY = Math.sin(elapsed * freq * 2 * Math.PI) * 4
       const flip = goingRight ? "" : " scaleX(-1)"
       corgi!.style.transform = `translateY(calc(-50% + ${bounceY}px))${flip}`
     }
