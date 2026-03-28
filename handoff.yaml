@@ -1,0 +1,210 @@
+# handoff.yaml — v2
+version: 2
+meta:
+  project: "blog"
+  session: 7
+  timestamp: "2026-03-29T07:30:00+11:00"
+  trigger: user
+  context_pct: 22
+  model: "claude-opus-4-6"
+
+current_task: null
+
+active_blockers: []
+
+decisions:
+  verified:
+    - claim: "Landing page: tagline + RecentNotes (Julia Evans style date + title)"
+      evidence: "Implemented, pushed, deployed. Researched jvns.ca via Chrome."
+      session: 7
+    - claim: "Content structure flattened — no en/zh folders, articles in content/ root"
+      evidence: "User chose option 2 (flatten) over option 1 (remove breadcrumbs). 18 files moved."
+      session: 7
+    - claim: "Topics (AI/Systems/Learning) separated from Tags — TopicNav in left sidebar, TagCloud in right"
+      evidence: "User said 'tags 和 topics 分开, topics 是大类'. TopicNav component created, 17 articles have topics field."
+      session: 7
+    - claim: "Explorer replaced with TopicNav in left sidebar"
+      evidence: "User asked 'explorer 要不显示topics呢'. Implemented and pushed."
+      session: 7
+    - claim: "Graph View: depth -1 (all nodes) on index, depth 1 (local) on articles"
+      evidence: "Verified locally: sidebar graph shows full blog connection map on index."
+      session: 7
+    - claim: "Article dates redistributed to actual creation timeline"
+      evidence: "Research agent traced dates through session briefs and handoff.yaml. 7 articles updated."
+      session: 7
+    - claim: "Session blog title: 'From Framework to Published: How I Batch-Shipped a Blog'"
+      evidence: "User said '15 是不是写太死了'. Renamed file and title."
+      session: 7
+    - claim: "Session blog factual error fixed: 'zero published' → 'handful, no process'"
+      evidence: "User caught: 'zero 这也不是事实吧'. 6 articles predated Session 6."
+      session: 7
+    - claim: "AI tag standardized to uppercase across all articles"
+      evidence: "User asked 'tags 里ai为什么不是大写'. TagCloud toLowerCase removed, frontmatter standardized."
+      session: 7
+    - claim: "baseUrl updated to blog.ylab3.com"
+      evidence: "User said '改'. OG images, sitemap, RSS now correct domain."
+      session: 7
+    - claim: "pipeline-ops pushed to GitHub"
+      evidence: "https://github.com/zl190/pipeline-ops — 24/24 tests passing."
+      session: 7
+    - claim: "PR #115 parked — mvanhorn deferring to v3.0 refactor"
+      evidence: "gh pr view 115 shows OPEN, mvanhorn commented 'Can't commit to merging right now'."
+      session: 7
+    - claim: "Spina email draft reconstructed"
+      evidence: "File at seminar_claude_for_research/email-spina-draft.md. URLs updated to new paths."
+      session: 7
+    - claim: "Design framework created: blog-design.md (TheDesigner persona)"
+      evidence: "Written by research agent, registered in CLAUDE.md output styles."
+      session: 7
+    - claim: "Quartz coding guide created: quartz-coding-guide.md (TheQuartzDev persona)"
+      evidence: "Written by research agent, covers architecture map + implementation patterns."
+      session: 7
+    - claim: "No hero/banner images — text-focused design"
+      evidence: "Session 6 decision carried forward. CustomOgImages handles social cards."
+      session: 6
+    - claim: "Blog QC pipeline: Template (blog.md) + Persona (TheEditor) + Procedure (Waves) + Enforcement (pre-commit hook)"
+      evidence: "Session 6 decision carried forward."
+      session: 6
+  proposed:
+    - claim: "Hero images with unified personal style — algorithmic generative art"
+      context: "User asked '能不能有统一的个人风格'. Session 7 recommended option A (algorithmic). No decision."
+      session: 7
+    - claim: "蒙娜丽莎 gaze-following background"
+      context: "User floated twice. Session 7 flagged conflict with text-focused design. No decision."
+      session: 7
+  rejected:
+    - claim: "Hide Graph on index page"
+      reason: "User said '谁说的?' — Graph should show, not hide."
+      session: 7
+    - claim: "Global graph popup on index page"
+      reason: "renderGlobalGraph() opens overlay, not sidebar widget. Wrong UX."
+      session: 7
+    - claim: "Topics: line in index.md body"
+      reason: "User said '你不如放在explorer?' — topic navigation belongs in sidebar."
+      session: 7
+
+discoveries:
+  - fact: "Quartz index.css has no content hash — browser cache persists across deploys"
+    source: "Session 7 CSS debugging"
+    session: 7
+  - fact: "Explorer useSavedState:true overrides folderDefaultState from localStorage"
+    source: "Session 7 Explorer debugging"
+    session: 7
+  - fact: "Graph depth:-1 renders all nodes in sidebar local graph widget"
+    source: "Session 7 Graph View fix, attempt 4"
+    session: 7
+  - fact: "renderGlobalGraph() opens full-page overlay, not sidebar widget"
+    source: "Session 7 Graph View fix, attempt 2"
+    session: 7
+  - fact: "D3 force-directed graph layout is non-deterministic — different visual arrangement each load"
+    source: "User question, confirmed as standard D3 behavior"
+    session: 7
+
+constraints:
+  - rule: "P8 — don't ask, decide and execute"
+    reason: "User preference"
+    expires: null
+  - rule: "No qc:passed = no publish (pre-commit hook enforced)"
+    reason: "Blog quality gate"
+    expires: null
+  - rule: "Independent QC agent reviews, not the builder"
+    reason: "Popper independence principle"
+    expires: null
+  - rule: "Read blog-design.md + quartz-coding-guide.md before layout changes"
+    reason: "Session 7 had 3 failed Graph fixes due to not understanding Quartz internals"
+    expires: null
+  - rule: "Build locally and verify before pushing"
+    reason: "index.css cache issue — CSS changes not visible without hard reload"
+    expires: null
+
+state_changes:
+  files_created:
+    - "quartz/components/TagCloud.tsx"
+    - "quartz/components/TopicNav.tsx"
+    - "content/from-framework-to-published.md"
+    - "briefs/session7-brief.md"
+    - "briefs/session7-rationale.md"
+    - "RESUME.md"
+    - "~/.claude/memory/knowledge/output-styles/blog-design.md"
+    - "~/.claude/memory/knowledge/quartz-coding-guide.md"
+  files_modified:
+    - "quartz.layout.ts"
+    - "quartz.config.ts"
+    - "quartz/components/index.ts"
+    - "quartz/components/scripts/graph.inline.ts"
+    - "quartz/components/styles/recentNotes.scss"
+    - "content/index.md"
+    - "content/*.md (17 articles — topics field, dates, tag standardization)"
+  services_deployed:
+    - "blog.ylab3.com via GitHub Pages (20+ pushes this session)"
+  configs_changed:
+    - "quartz.config.ts (baseUrl)"
+    - "quartz.layout.ts (multiple iterations)"
+
+session_log:
+  - session: 7
+    date: 2026-03-29
+    summary: "Session 7 redesigned blog landing page, separated Topics from Tags, fixed Graph View, flattened content structure, created design framework + Quartz coding guide"
+    tasks:
+      - task: "Blog landing page redesign"
+        status: done
+        outcome: "Julia Evans style, RecentNotes auto-list, TagCloud sidebar, TopicNav"
+      - task: "Graph View fix"
+        status: done
+        outcome: "depth:-1 on index (all nodes), depth:1 on articles (local)"
+      - task: "Content structure flatten"
+        status: done
+        outcome: "en/zh folders removed, URLs now /article-name"
+      - task: "Session blog write + QC + publish"
+        status: done
+        outcome: "from-framework-to-published.md — QC passed, factual error fixed"
+      - task: "pipeline-ops push"
+        status: done
+        outcome: "https://github.com/zl190/pipeline-ops"
+      - task: "Spina email draft"
+        status: done
+        outcome: "email-spina-draft.md — URLs updated"
+      - task: "Design framework + Quartz guide"
+        status: done
+        outcome: "blog-design.md + quartz-coding-guide.md"
+      - task: "方法论全景图 blog"
+        status: blocked
+        outcome: "Not started — was P1 but session focused on layout redesign"
+  - session: 6
+    date: 2026-03-29
+    summary: "Session 6 built blog production pipeline, QC'd 16 articles, published to blog.ylab3.com"
+    tasks:
+      - task: "Blog pipeline"
+        status: done
+        outcome: "Template + Persona + Procedure + Enforcement"
+      - task: "16 articles QC"
+        status: done
+        outcome: "15 published, 1 killed"
+
+next_steps:
+  - priority: P1
+    task: "方法论全景图 blog"
+    dependency: "Session blog published (done)"
+    context: "Source: ~/.claude/memory/knowledge/framework-panorama.md"
+  - priority: P1
+    task: "Email Spina"
+    dependency: "Verify blog URLs are live after URL change"
+    context: "Draft at seminar_claude_for_research/email-spina-draft.md"
+  - priority: P2
+    task: "Hero images — decide approach"
+    dependency: null
+    context: "Options: algorithmic generative art (recommended), AI, typography"
+  - priority: P2
+    task: "SM smoke run ($8)"
+    dependency: null
+    context: "Experiment design at sm-vs-pua/.claude/CLAUDE.md"
+  - priority: P2
+    task: "Vale linter"
+    dependency: null
+    context: "Turn 9 AI Smell items into YAML rules"
+  - priority: P3
+    task: "TIL format"
+    dependency: null
+    context: "Simon Willison pattern, content/til/"
+
+resume_command: "read /Users/zl190/Developer/personal/blog/briefs/session7-brief.md then execute next steps"
