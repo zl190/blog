@@ -79,6 +79,13 @@ export const defaultContentPageLayout: PageLayout = {
   right: [
     Component.ConditionalRender({
       component: Component.Graph({
+        localGraph: { depth: -1, showTags: false, enableRadial: true },
+        globalGraph: { showTags: false },
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+    Component.ConditionalRender({
+      component: Component.Graph({
         localGraph: { showTags: false },
         globalGraph: { showTags: false },
       }),
