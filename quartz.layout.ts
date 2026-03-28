@@ -77,16 +77,13 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.ConditionalRender({
-      component: Component.Graph({
-        localGraph: {
-          showTags: false,
-        },
-        globalGraph: {
-          showTags: false,
-        },
-      }),
-      condition: (page) => page.fileData.slug !== "index",
+    Component.Graph({
+      localGraph: {
+        showTags: false,
+      },
+      globalGraph: {
+        showTags: false,
+      },
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
