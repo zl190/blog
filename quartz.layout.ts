@@ -5,7 +5,25 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        limit: 50,
+        showTags: true,
+        filter: (f) => f.slug !== "index",
+        sort: (f1, f2) => {
+          const p1 = f1.frontmatter?.pinned ? 1 : 0
+          const p2 = f2.frontmatter?.pinned ? 1 : 0
+          if (p1 !== p2) return p2 - p1
+          const d1 = f1.dates?.created ?? f1.dates?.modified
+          const d2 = f2.dates?.created ?? f2.dates?.modified
+          if (d1 && d2) return new Date(d2).getTime() - new Date(d1).getTime()
+          return (d2 ? 1 : 0) - (d1 ? 1 : 0)
+        },
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
+  ],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/zl190",
