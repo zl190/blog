@@ -56,25 +56,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({
-      folderDefaultState: "open",
-      folderClickBehavior: "collapse",
-      useSavedState: false,
-      filterFn: (node) => node.slugSegment !== "tags",
-      sortFn: (a, b) => {
-        if (a.isFolder && b.isFolder) {
-          return a.displayName.localeCompare(b.displayName)
-        }
-        if (a.isFolder !== b.isFolder) return a.isFolder ? -1 : 1
-        if (a.data?.date && b.data?.date) {
-          return new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-        }
-        return a.displayName.localeCompare(b.displayName, undefined, {
-          numeric: true,
-          sensitivity: "base",
-        })
-      },
-    }),
+    Component.TagCloud(),
   ],
   right: [
     Component.ConditionalRender({
@@ -93,7 +75,6 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
-    Component.TagCloud(),
   ],
 }
 
@@ -112,7 +93,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.TagCloud(),
   ],
   right: [],
 }
