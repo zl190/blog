@@ -1,5 +1,6 @@
 ---
 title: "The 20% Heuristic: Why Your 1M Context Window Isn't What You Think"
+created: 2026-03-24
 date: 2026-03-27
 tags: [ai, claude-code, context-windows, research-methodology]
 qc: passed

@@ -1,5 +1,6 @@
 ---
 title: "Why Your 1M Context Window Degrades Faster Than Your Old 20K"
+created: 2026-03-25
 date: 2026-03-27
 tags: [ai, claude-code, context-windows, attention-mechanisms]
 qc: passed

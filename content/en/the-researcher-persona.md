@@ -1,5 +1,6 @@
 ---
 title: "Why Your AI Editor Isn't Enough: Introducing TheResearcher Persona"
+created: 2026-03-26
 date: 2026-03-27
 tags: [ai, claude-code, research-methodology, personas]
 qc: passed

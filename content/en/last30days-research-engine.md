@@ -1,5 +1,6 @@
 ---
 title: "One Command, Multiple Sources: How I Built a Research Engine That Actually Finds What People Are Talking About"
+created: 2026-03-28
 date: 2026-03-29
 tags: [ai, claude-code, research-tools, last30days, open-source]
 qc: passed
