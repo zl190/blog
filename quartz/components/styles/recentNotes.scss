@@ -45,7 +45,14 @@
       }
 
       .section > .tags {
-        display: none;
+        margin: 0.1rem 0 0 0;
+        gap: 0.3rem;
+
+        & > li > a.tag-link {
+          font-size: 0.7rem;
+          padding: 0.05rem 0.25rem;
+          opacity: 0.7;
+        }
       }
     }
   }
