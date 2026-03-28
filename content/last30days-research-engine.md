@@ -5,7 +5,7 @@ date: 2026-03-29
 tags: [AI, claude-code, research-tools, last30days, open-source]
 topics:
   - AI
-qc: passed
+draft: true
 ---
 
 I ran `/last30days Arizona Basketball` last week and got back NCAA Tournament championship odds from Polymarket — Arizona at 12%, #1 seed probability at 88%, Big 12 title race at 69% — pulled from 50+ open prediction markets across 10 events before I'd even opened a browser tab. I was expecting Reddit takes and maybe a few highlight reels. I got what the betting market actually believes, alongside r/CollegeBasketball's running commentary and YouTube breakdowns ranked by real view counts. That's the gap this tool is trying to close: not "what was written about this topic" but "what is everyone currently arguing about, betting on, and watching."
