@@ -31,7 +31,7 @@ When you then ask the model to execute within that same session, you're doing in
 
 Microsoft's paper identified the problem but not the mechanism. From what I've observed and read, multi-turn degradation has three independent causes:
 
-**Token accumulation.** More tokens in the context means more attention dilution. System prompt instructions that worked at 5K tokens get drowned at 50K. This is the mechanism I wrote about in my previous post — it's what broke my YAML generator.
+**Token accumulation.** More tokens in the context means more attention dilution. System prompt instructions that worked at 5K tokens get drowned at 50K. I've written about [[context-degradation-theory|why this happens mechanistically]] — it's absolute token count, not percentage. This is the mechanism that broke my YAML generator.
 
 **Behavioral path dependence.** This is the one people miss. The model doesn't just lose track of information — it accumulates behavioral momentum. If you spent 20 messages exploring a bad approach before pivoting, the model has 20 messages worth of "evidence" that the bad approach is what you want. The conversation history biases it toward the wrong prior. Corrections in message 21 have to overcome the inertia of messages 1-20.
 
@@ -51,7 +51,7 @@ This is the compression step. Training data → weights. The brief IS your weigh
 
 **Phase 3: Execute.** Start a fresh session. Feed it only the brief. The model now has a clean context with nothing but decisions and instructions. No path dependence, no dead ends, no noise. Execution quality returns to near-baseline.
 
-I've been running this workflow for a month on cc-fuel-gauge development. The difference is night and day. Brainstorm sessions can run long — 40, 50 messages — because I'm not going to execute in that context anyway. Execution sessions stay short and precise because they start from a clean brief.
+I've been running this workflow for a month on cc-fuel-gauge development. The difference is night and day. Brainstorm sessions can run long — 40, 50 messages — because I'm not going to execute in that context anyway. Execution sessions stay short and precise because they start from a clean brief. For practical implementation of this workflow, see [[claude-code-tips-i-wish-i-knew-sooner|my Claude Code tips]].
 
 ## Distillation Is Not Summarization
 

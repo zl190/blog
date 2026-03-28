@@ -67,7 +67,7 @@ PUA already has rules for this:
 
 But these didn't trigger. The AI didn't think it was "only answering" — it believed it was doing the right thing by not breaking passing tests. PUA detects **giving up** and **laziness**. The S2 AI did neither. It was **overcautious**.
 
-This is PUA's blind spot: **analysis ≠ delivery**. Exhausting all analytical paths ≠ exhausting all fix paths.
+This is PUA's blind spot: **analysis ≠ delivery**. Exhausting all analytical paths ≠ exhausting all fix paths. The brainstorm/execute split I describe in [[brainstorm-is-training-execution-is-inference|this post]] is one way to manage context so that analysis and delivery don't compete for the same attention budget.
 
 ## The One Rule That Helped
 
@@ -79,7 +79,7 @@ I tested 4 supplementary rules. Only one showed any effect: requiring a one-line
 
 The hypothesis for why this works: writing "the problem is serializer.py missing a DatetimeEncoder" creates commitment to act. Analysis can stay internal and produce no output. But once you write a structured diagnosis, not acting on it becomes cognitively harder.
 
-This isn't a silver bullet — it still failed 1 out of 3 times. But 0/3 → 2/3 is a real signal on a reproducible failure.
+This isn't a silver bullet — it still failed 1 out of 3 times. But 0/3 → 2/3 is a real signal on a reproducible failure. The structured diagnosis approach became [[the-researcher-persona|TheResearcher persona]].
 
 ## Limitations
 

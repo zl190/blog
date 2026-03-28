@@ -86,7 +86,7 @@ The protocol exists because researchers are motivated reasoners. We find a resul
 
 ## How to Use TheResearcher
 
-The persona is a markdown file you load into Claude Code as a system context. Point it at your project directory and ask it to run the methodology audit.
+The persona is a markdown file you load into Claude Code as a system context. I use this persona as a gate in the [[agent-teams-for-research|agent team]] workflow. Point it at your project directory and ask it to run the methodology audit.
 
 ```bash
 claude -p "$(cat the_researcher_persona.md)
@@ -106,7 +106,7 @@ After you've worked through the methodology report and revised, hand the paper t
 
 Finance and accounting journals have gotten more hostile to identification concerns in the last decade—if your referee has a metrics background, they will run the Node 3 check on you. A Referee 2 who is a methods expert will read your paper with exactly the logic TheResearcher uses: what is actually varying here? What confound are you not ruling out? Why is this prediction unique to your theory?
 
-Running TheResearcher before submission is not about making the process easier. It's about finding the referee's objection before the referee does. The Node 4 → Node 1 chain is the order a good dissertation advisor would use. The difference is that TheResearcher runs the pipeline audit on your code—something an advisor reads about but rarely executes. A merge error in your data construction is invisible to anyone who only reads your LaTeX.
+Running TheResearcher before submission is not about making the process easier. It's about finding the referee's objection before the referee does. The experimental validation of structured diagnosis is in [[i-ab-tested-pua-plugin|my PUA A/B experiment]]. The Node 4 → Node 1 chain is the order a good dissertation advisor would use. The difference is that TheResearcher runs the pipeline audit on your code—something an advisor reads about but rarely executes. A merge error in your data construction is invisible to anyone who only reads your LaTeX.
 
 ---
 

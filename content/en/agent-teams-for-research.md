@@ -184,7 +184,7 @@ For a grant submission or RFS-caliber paper, $5–10 of automated review is chea
 
 ## When Agents Get Stuck: The PUA Trick
 
-Agents sometimes give up. They'll say "I cannot access this file" when the file is right there, or produce a half-finished report and call it done. The [PUA](https://github.com/tanweai/pua) project addresses this with a prompt pattern that treats the agent's refusal to try harder as a performance failure, forcing it to enumerate every untried option before stopping.
+Agents sometimes give up. They'll say "I cannot access this file" when the file is right there, or produce a half-finished report and call it done. The [PUA](https://github.com/tanweai/pua) project addresses this with a prompt pattern that treats the agent's refusal to try harder as a performance failure, forcing it to enumerate every untried option before stopping. I tested whether pushing agents harder improves output in [[i-ab-tested-pua-plugin|my PUA A/B test]].
 
 The practical version: if your fixer agent returns without making changes, re-run it with an explicit instruction like "Do not return until every issue in the critic report has been addressed. If you cannot fix an issue directly, explain what a human author would need to do." This prevents the passive non-response that's the most common failure mode.
 
@@ -198,7 +198,7 @@ Three focused reviewers with tight prompts outperform five diffuse ones. Every a
 
 The part that surprised me most: specialization matters more than the architecture. "Review the paper" is the worst possible prompt — it gives the agent no constraint and you get a response that could have come from any reader. "Check whether the standard errors in Table 3 are consistent with the clustering level described in footnote 8" is a prompt that only an agent that has actually read your paper can answer. The more specific the task, the more the parallel architecture earns its cost. A focused agent running a narrow check on a single table outperforms a general reviewer running over the whole paper. If you run this and it feels underwhelming, the prompt is almost always the problem.
 
-The Orchestrator step looks optional — you have three reports, just read them yourself. Don't. Raw reviewer outputs have overlapping issues and conflicting priorities. A second Claude call that reads all three and ranks the top 5 issues by acceptance probability takes 30 seconds and costs $0.25. That step is what turns three reviews into an action list.
+The Orchestrator step looks optional — you have three reports, just read them yourself. Don't. Raw reviewer outputs have overlapping issues and conflicting priorities. For a deeper quality audit beyond team review, I built [[the-researcher-persona|TheResearcher persona]]. A second Claude call that reads all three and ranks the top 5 issues by acceptance probability takes 30 seconds and costs $0.25. That step is what turns three reviews into an action list.
 
 The gap between the slide and working code is mostly just writing the bash wrapper and trusting that `tmux` + `claude -p` is the whole infrastructure. You don't need a cloud orchestration platform. You need a text editor and a terminal.
 

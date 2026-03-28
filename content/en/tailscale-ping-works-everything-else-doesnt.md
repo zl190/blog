@@ -44,7 +44,7 @@ tailscale status --json | jq '.Peer[] | select(.TailscaleIPs[] == "100.80.100.40
 
 `LastHandshake: 0001-01-01` is Go's zero value for `time.Time`. The WireGuard tunnel had never established. Not "lost connection" — never started.
 
-Then I did the thing that sent me in the wrong direction for twenty minutes:
+Then I did the thing that sent me in the wrong direction for twenty minutes. The diagnosis-first approach I tested in [[i-ab-tested-pua-plugin|the PUA experiment]] applies here too — the wrong diagnosis sent me chasing the wrong layer.
 
 ```bash
 tailscale ping 100.80.100.40

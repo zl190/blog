@@ -177,7 +177,7 @@ TCP's designers (unknowingly?) encoded a profound risk management principle:
 
 The Internet processes billions of packets per second using a 40-year-old algorithm that says: when things go wrong, back off fast; when things go well, proceed with caution.
 
-TCP's designers didn't set out to create life advice. But the simulation is clear: the strategy that survives long enough to learn beats the strategy that bets everything on being right.
+TCP's designers didn't set out to create life advice. But the simulation is clear: the strategy that survives long enough to learn beats the strategy that bets everything on being right. The mathematical foundation connecting TCP to probability is in [[from-tcp-to-sigmoid-a-journey-of-odds|From TCP to Sigmoid]].
 
 Martingale is seductive because the math seems to work (it does, with infinite money). AIMD is boring because it never swings for the fences.
 

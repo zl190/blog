@@ -59,7 +59,7 @@ The fix is reputation systems and certification, not better code. The bottleneck
 
 The most common mistake in agent economy discussions is treating it as a future-state problem. "Once we have AGI, once agents are fully autonomous..." — this frames it as something to prepare for rather than something happening.
 
-Here's what I actually observe running agent systems: you can request a service and receive results without knowing whether an agent, a human, or some hybrid is behind it. I've built and used Claude Code for multi-hour agentic tasks. Waymo has remote operators for edge cases. Users don't care. The interface is the same; the implementation behind it is invisible.
+Here's what I actually observe running agent systems: the practical implementation of agent teams is in [[agent-teams-for-research|this post]]. You can request a service and receive results without knowing whether an agent, a human, or some hybrid is behind it. I've built and used Claude Code for multi-hour agentic tasks. Waymo has remote operators for edge cases. Users don't care. The interface is the same; the implementation behind it is invisible.
 
 ```mermaid
 graph LR
@@ -94,7 +94,7 @@ The symmetry also means the agent economy is already larger than it looks. Every
 
 This means the agent economy isn't waiting for AGI. It's at L2–L4 autonomy, the equivalent of Waymo's current deployment status. Full autonomy is a point on the spectrum, not a prerequisite for economic activity. The markets are forming now, the resource stacks are accumulating now, and the value capture is happening now — mostly to people who control the infrastructure.
 
-There's a practical consequence for people building right now. If you're building an agent application, the question isn't "how do I make my agent smarter?" — foundation model convergence means your intelligence ceiling is roughly the same as everyone else's. The question is "what resource stack can I accumulate that nobody else has?" That might be domain credentials (your agent has OAuth access to a specific set of APIs that competitors can't easily get). It might be a proprietary data loop where your agent's task history generates training data that improves the next version of your agent. It might be reputation — deploying early in a marketplace where track record accretes. None of these are code problems.
+There's a practical consequence for people building right now. I've [[i-ab-tested-pua-plugin|experimentally tested]] whether pushing AI agents harder improves their output — the answer is nuanced, but it underscores that raw intelligence isn't the differentiator. If you're building an agent application, the question isn't "how do I make my agent smarter?" — foundation model convergence means your intelligence ceiling is roughly the same as everyone else's. The question is "what resource stack can I accumulate that nobody else has?" That might be domain credentials (your agent has OAuth access to a specific set of APIs that competitors can't easily get). It might be a proprietary data loop where your agent's task history generates training data that improves the next version of your agent. It might be reputation — deploying early in a marketplace where track record accretes. None of these are code problems.
 
 ## The Paper as One Instance
 

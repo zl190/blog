@@ -156,4 +156,6 @@ DEVONthink is powerful. But I prefer owning my files and knowledge in plain form
 4. **Keep ZK pure** — cards link to cards; everything else is scaffolding
 5. **Symlinks bridge locations** — one update if paths change
 
+The action-tracking layer I add on top of this is in [[zk-first-adding-action-without-losing-knowledge|ZK-First]].
+
 ---

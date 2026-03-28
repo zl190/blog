@@ -17,7 +17,7 @@ How I learned from 40 years of Emacs wisdom to design a better personal knowledg
 
 ## The Problem
 
-I started with a pure Zettelkasten — atomic cards, links, MOCs. It worked beautifully for knowledge. Then I wanted to track project ideas, and everything got complicated.
+I started with a pure Zettelkasten — atomic cards, links, MOCs. The underlying file organization that makes this work is in [[physical-vs-conceptual-file-organization|Physical vs Conceptual File Organization]]. It worked beautifully for knowledge. Then I wanted to track project ideas, and everything got complicated.
 
 My first instinct: add a `project: true` field. But that felt wrong. Was I turning my knowledge base into a todo list?
 

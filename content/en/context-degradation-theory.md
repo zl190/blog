@@ -7,7 +7,7 @@ qc: passed
 
 # Why Your 1M Context Window Degrades Faster Than Your Old 20K: It's Absolute Tokens, Not Percentage
 
-A few months ago I wrote about what I called the "20% rule" — the observation that effective context for Claude seems to cap out around 200K tokens, or 20% of the advertised 1M window. The framing was empirical: here's what the research says, here's what I see in practice, plan for 200K not 1M.
+In [[context-window-20-percent-heuristic|my earlier post on the 20% heuristic]], I described the empirical pattern — the observation that effective context for Claude seems to cap out around 200K tokens, or 20% of the advertised 1M window. The framing was empirical: here's what the research says, here's what I see in practice, plan for 200K not 1M.
 
 That framing was right as a heuristic. But it missed something, and I've been sitting with the gap ever since.
 
@@ -88,6 +88,8 @@ The old heuristic — "hand off at 20% of window" — scales incorrectly for lar
 For practical workflow: when you're doing careful analytical work — cross-checking claims, iterating on empirical strategy, debugging statistical code — track your absolute token count, not the percentage. When you've accumulated 30-40K tokens, start a fresh session with a good summary of where you are. This will feel wrong when the bar shows 3%. The bar is lying. The fresh context will outperform the degraded one.
 
 The 1M window is not "5x more room." It's "same room, longer hallway." The room where things work well is about the same size. The hallway behind it is longer and darker.
+
+The workflow implications of this are in [[brainstorm-is-training-execution-is-inference|Brainstorm Is Training, Execution Is Inference]].
 
 ---
 

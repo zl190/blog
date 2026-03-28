@@ -227,7 +227,7 @@ All three: continuous growth, bounded growth, and log-odds inversion — lead to
 
 I started with TCP AIMD, discovered odds and sigmoid, and now I'm back to TCP — but CUBIC instead of AIMD. And CUBIC explicitly rejects logistic in favor of cubic, precisely because of the inflection point behavior.
 
-The journey was: linear TCP → odds → sigmoid/logistic → back to TCP, which chose cubic *instead of* logistic.
+The journey was: linear TCP → odds → sigmoid/logistic → back to TCP, which chose cubic *instead of* logistic. I explored the risk management side of TCP in [[you-cant-learn-if-youre-dead|You Can't Learn If You're Dead]].
 
 Full circle, with a twist.
 

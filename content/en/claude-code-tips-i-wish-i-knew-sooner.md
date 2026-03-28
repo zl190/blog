@@ -356,13 +356,13 @@ My daily workflow now looks like this:
 |------|---------------|-----|
 | Claude Code (interactive) | MacBook local | Zero typing latency |
 | GPU training | Remote server via SSH | CC dispatches, I don't wait |
-| Background agents | Oracle free tier | Always-on, zero cost |
+| Background agents | Oracle free tier | Always-on, zero cost (for team-based agent workflows, see [[agent-teams-for-research|Agent Teams for Academic Research]]) |
 | MCP servers (Chrome, etc.) | Oracle free tier | Headless, CDP-based |
 | Session monitoring | Phone via `/rc` | Approve permissions anywhere |
 
 The total cost of this setup beyond the Claude Code subscription: $0/month. The Oracle instance is free. Mosh is free. The phone remote control is built in.
 
-The common thread across all seven tips: the bottleneck in AI-assisted development is rarely the AI. It's the environment around it — permissions, latency, availability, access. Fix the environment, and the AI gets dramatically more useful.
+The common thread across all seven tips: the bottleneck in AI-assisted development is rarely the AI. It's the environment around it — permissions, latency, availability, access. Fix the environment, and the AI gets dramatically more useful. For why session management matters so much, see [[context-window-20-percent-heuristic|the 20% heuristic]].
 
 ---
 
