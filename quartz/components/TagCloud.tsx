@@ -56,8 +56,7 @@ export default ((userOpts?: Partial<Options>) => {
             const linkDest = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
             return (
               <a href={linkDest} class={`internal tag-cloud-link ${sizeClass(count)}`}>
-                {tag}
-                <span class="tag-count">{count}</span>
+                {tag} <span class="tag-count">{count}</span>
               </a>
             )
           })}
