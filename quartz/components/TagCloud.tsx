@@ -25,8 +25,7 @@ export default ((userOpts?: Partial<Options>) => {
       const tags = file.frontmatter?.tags
       if (tags) {
         for (const tag of tags) {
-          const normalized = tag.toLowerCase()
-          tagCounts[normalized] = (tagCounts[normalized] || 0) + 1
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1
         }
       }
     }
@@ -53,7 +52,7 @@ export default ((userOpts?: Partial<Options>) => {
         <h3>Tags</h3>
         <div class="tag-cloud-list">
           {entries.map(([tag, count]) => {
-            const linkDest = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
+            const linkDest = resolveRelative(fileData.slug!, `tags/${tag.toLowerCase()}` as FullSlug)
             return (
               <a href={linkDest} class={`internal tag-cloud-link ${sizeClass(count)}`}>
                 {tag} <span class="tag-count">{count}</span>

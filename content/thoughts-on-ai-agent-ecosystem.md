@@ -6,7 +6,7 @@ status: draft
 draft: true
 created: 2026-01-12
 language: en
-tags: [agent, ai, ecosystem]
+tags: [agent, AI, ecosystem]
 published_url: https://zl190.github.io/blog/posts/thoughts-on-ai-agent-ecosystem/
 published_date: 2026-01-27
 ---

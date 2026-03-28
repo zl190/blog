@@ -2,7 +2,7 @@
 title: "Brainstorm Is Training, Execution Is Inference"
 created: 2026-01-27
 date: 2026-01-27
-tags: [ai, claude-code, context-windows, workflow]
+tags: [AI, claude-code, context-windows, workflow]
 qc: passed
 ---
 

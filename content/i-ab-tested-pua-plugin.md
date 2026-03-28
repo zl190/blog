@@ -5,7 +5,7 @@ status: published
 created: 2026-03-18
 published_date: 2026-03-18
 language: en
-tags: [ai, claude-code, experiments, debugging]
+tags: [AI, claude-code, experiments, debugging]
 qc: passed
 ---
 
