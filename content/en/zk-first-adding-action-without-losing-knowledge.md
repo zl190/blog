@@ -1,11 +1,11 @@
 ---
 title: "ZK-First: Adding Action Without Losing Knowledge"
-type: draft
 format: blog
 lang: en
 created: 2026-01-20
-status: draft
-draft: true
+status: published
+draft: false
+qc: passed
 published_url: https://zl190.github.io/blog/posts/zk-first-adding-action-without-losing-knowledge/
 published_date: 2026-01-27
 tags: [zettelkasten, pkm, productivity, emacs, org-mode]
@@ -146,4 +146,4 @@ My "trigger system" idea — adding push mechanisms to a knowledge base — echo
 
 ---
 
-*This post was written after a day-long design session with Claude, exploring how to add action tracking to a Zettelkasten without corrupting it. The full discussion is preserved in my vault as `schema-evolution-content-plus-layers.md`.*
+*This post was written after a day-long design session with Claude, where I used it to compare org-mode's approach with Zettelkasten principles and prototype the layered schema. The full discussion is preserved in my vault as `schema-evolution-content-plus-layers.md`.*

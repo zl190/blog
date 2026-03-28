@@ -1,8 +1,9 @@
 ---
 title: "7 Claude Code Tips That Actually Changed How I Work"
 format: blog
-status: draft
-draft: true
+status: published
+draft: false
+qc: passed
 created: 2026-03-18
 published_date: 2026-03-18
 language: en

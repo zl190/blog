@@ -1,9 +1,9 @@
 ---
 title: "Physical vs Conceptual File Organization"
-type: draft
 format: blog
-status: draft
-draft: true
+status: published
+draft: false
+qc: passed
 published_url: https://zl190.github.io/blog/posts/physical-vs-conceptual-file-organization/
 published_date: 2026-01-27
 created: 2026-01-17
@@ -157,9 +157,3 @@ DEVONthink is powerful. But I prefer owning my files and knowledge in plain form
 5. **Symlinks bridge locations** — one update if paths change
 
 ---
-
-## Meta
-
-- Source: Conversation designing my own file system
-- Related: [[2026-01-17-file-organization-plan]]
-- Potential outlets: Personal blog, dev.to, Medium
