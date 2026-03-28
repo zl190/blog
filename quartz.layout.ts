@@ -8,8 +8,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({
+        title: "Articles",
         limit: 50,
-        showTags: true,
+        showTags: false,
         filter: (f) => f.slug !== "index",
         sort: (f1, f2) => {
           const p1 = f1.frontmatter?.pinned ? 1 : 0
