@@ -2,7 +2,19 @@ import { FullSlug, resolveRelative } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 
-export default (() => {
+interface Options {
+  limit: number
+  minCount: number
+}
+
+const defaultOptions: Options = {
+  limit: 15,
+  minCount: 2,
+}
+
+export default ((userOpts?: Partial<Options>) => {
+  const opts = { ...defaultOptions, ...userOpts }
+
   const TagCloud: QuartzComponent = ({
     fileData,
     allFiles,
@@ -19,7 +31,11 @@ export default (() => {
       }
     }
 
-    const entries = Object.entries(tagCounts).sort((a, b) => b[1] - a[1])
+    const entries = Object.entries(tagCounts)
+      .filter(([, count]) => count >= opts.minCount)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, opts.limit)
+
     if (entries.length === 0) return null
 
     const max = entries[0][1]
@@ -41,6 +57,7 @@ export default (() => {
             return (
               <a href={linkDest} class={`internal tag-cloud-link ${sizeClass(count)}`}>
                 {tag}
+                <span class="tag-count">{count}</span>
               </a>
             )
           })}
@@ -62,34 +79,37 @@ export default (() => {
 .tag-cloud-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
-  line-height: 1.8;
+  gap: 0.4rem 0.6rem;
+  line-height: 1.6;
 }
 
 .tag-cloud-link {
-  border-radius: 6px;
-  background-color: var(--highlight);
-  padding: 0.15rem 0.4rem;
   white-space: nowrap;
 }
 
+.tag-count {
+  font-size: 0.75em;
+  opacity: 0.5;
+  margin-left: 0.15em;
+}
+
 .tag-cloud-xl {
-  font-size: 1.15em;
+  font-size: 1.1em;
   font-weight: 700;
 }
 
 .tag-cloud-lg {
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: 600;
 }
 
 .tag-cloud-md {
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .tag-cloud-sm {
   font-size: 0.8em;
-  opacity: 0.85;
+  opacity: 0.7;
 }
 `
 
