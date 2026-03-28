@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: "zl190.github.io/blog",
+    baseUrl: "blog.ylab3.com",
     ignorePatterns: ["private", "templates", ".obsidian", "**/CLAUDE.md"],
     defaultDateType: "created",
     theme: {
