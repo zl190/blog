@@ -1,0 +1,80 @@
+@use "../../styles/variables.scss" as *;
+
+.background-art {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.06;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+
+  -webkit-mask-image: radial-gradient(ellipse 50% 65% at center, black 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 50% 65% at center, black 20%, transparent 75%);
+
+  @media all and ($mobile) {
+    opacity: 0.04;
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at center, black 10%, transparent 70%);
+    mask-image: radial-gradient(ellipse 60% 50% at center, black 10%, transparent 70%);
+  }
+}
+
+// Hidden state
+.background-art.art-hidden {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease;
+}
+
+// Toggle button — bottom-left corner, minimal
+.background-art-toggle {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  color: var(--gray);
+  opacity: 0.3;
+  transition: opacity 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    color: var(--secondary);
+  }
+
+  // Crossed-out state when art is off
+  &.art-off {
+    opacity: 0.15;
+
+    svg {
+      text-decoration: line-through;
+    }
+
+    // Slash through the eye
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid var(--gray);
+      transform: rotate(-45deg);
+      transform-origin: center;
+    }
+  }
+
+  @media all and ($mobile) {
+    bottom: 8px;
+    left: 8px;
+  }
+}

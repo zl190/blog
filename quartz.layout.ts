@@ -4,7 +4,13 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [
+    Component.BackgroundArt({
+      themes: [
+        { name: "Mona Lisa", dir: "mona-lisa", images: ["classic-hd.jpg"] },
+      ],
+    }),
+  ],
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({

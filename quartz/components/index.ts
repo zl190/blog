@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import TagCloud from "./TagCloud"
 import TopicNav from "./TopicNav"
+import BackgroundArt from "./BackgroundArt"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   TagCloud,
   TopicNav,
+  BackgroundArt,
 }
