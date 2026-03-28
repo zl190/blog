@@ -4,6 +4,7 @@ format: blog
 status: published
 draft: false
 qc: passed
+spec: "The productivity gains from Claude Code come from infrastructure configuration, not prompting technique | creator — built a location-independent dev environment across multiple continents | developers setting up Claude Code for the first time or optimizing their existing setup"
 created: 2026-03-18
 published_date: 2026-03-18
 language: en

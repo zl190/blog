@@ -6,6 +6,7 @@ created: 2026-01-20
 status: published
 draft: false
 qc: passed
+spec: "Org-mode's insight that TODO state is an optional overlay on any content resolves the tension between keeping a pure Zettelkasten and tracking actionable projects | creator — designed their own PKM system and discovered the org-mode pattern independently | knowledge workers who want to add task tracking to a Zettelkasten without corrupting its structure"
 published_url: https://zl190.github.io/blog/posts/zk-first-adding-action-without-losing-knowledge/
 published_date: 2026-01-27
 tags: [zettelkasten, pkm, productivity, emacs, org-mode, Learning]

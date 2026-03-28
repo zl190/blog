@@ -13,6 +13,7 @@ tags:
 topics:
   - AI
 qc: passed
+spec: "A blog content supply chain with independent QC makes publishing mechanical and removes the gap between written and shipped | creator — built the blog infrastructure, style guide, and publishing pipeline described | writers using AI who want a repeatable production process rather than ad-hoc publishing"
 ---
 
 I QC'd and published 16 blog articles in one Claude Code session. Here's how the framework made it mechanical.

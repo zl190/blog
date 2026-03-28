@@ -6,6 +6,7 @@ tags: [AI, claude-code, open-source, hackernews]
 topics:
   - AI
 qc: passed
+spec: "Keyword search against HN titles silently misses high-engagement stories whose titles don't match generic query terms; a trending-stories merge fixes the structural gap | contributor — diagnosed the failure and shipped PR #115 to mvanhorn's last30days | researchers and developers who rely on last30days for current-events monitoring"
 ---
 
 I was looking at the HN front page and saw a story about a LiteLLM supply chain attack — 920 points, several hundred comments, clearly a big deal in the AI security space. Later that day I ran `/last30days` searching for recent AI security news, and it wasn't there. I searched "LLM", "security", "supply chain". Nothing. The story existed — I'd just read it — but the tool couldn't find it.

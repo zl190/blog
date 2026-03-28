@@ -6,6 +6,7 @@ tags: [AI, claude-code, context-windows, attention-mechanisms]
 topics:
   - AI
 qc: passed
+spec: "Context degradation scales with absolute token count, not context window percentage, because attention entropy grows as Θ(log n) | creator — built cc-fuel-gauge and observed the pattern empirically before finding the mathematical proof | developers and researchers building long-context LLM workflows"
 ---
 
 # Why Your 1M Context Window Degrades Faster Than Your Old 20K: It's Absolute Tokens, Not Percentage

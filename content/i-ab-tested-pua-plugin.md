@@ -9,6 +9,7 @@ tags: [AI, claude-code, experiments, debugging]
 topics:
   - AI
 qc: passed
+spec: "PUA plugin fails on cross-layer bugs where the traceback points to the wrong file because it exhausts local fixes before checking causal distance | user — ran controlled A/B experiments on tanweai's PUA plugin | Claude Code users who want to know when to supplement PUA with diagnostic rules"
 ---
 
 # I A/B Tested the PUA Plugin and Found a Blind Spot

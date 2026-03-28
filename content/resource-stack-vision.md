@@ -6,6 +6,7 @@ tags: [AI, economics, ai-agents, resource-stack, agent-economy, A2A]
 topics:
   - AI
 qc: passed
+spec: "The AI agent economy's winning asset is the resource stack — compute, budget, credentials, reputation, accumulated state — not agent code, which is already a commodity | observer — synthesizes economics literature and agent framework trends to make a structural argument | investors, builders, and strategists thinking about where durable value accumulates in the agent economy"
 ---
 
 The most common prediction about the AI agent economy is that the winners will be whoever builds the best agents. That prediction is wrong, and it's wrong in a specific, interesting way that has real money riding on it.

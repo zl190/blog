@@ -9,6 +9,7 @@ tags: [tcp, networking, probability, risk-management, simulation, Learning]
 topics:
   - Learning
 qc: passed
+spec: "TCP's AIMD strategy survives because it guarantees survival before optimizing gain, which is exactly why Martingale gambling strategies eventually fail | observer — student who ran simulations while studying TCP to trace the analogy | students and practitioners who want a concrete model for when to bet big versus preserve capital"
 ---
 
 # AIMD-vs-Martingale, Who will win?

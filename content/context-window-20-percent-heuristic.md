@@ -6,6 +6,7 @@ tags: [AI, claude-code, context-windows, research-methodology]
 topics:
   - AI
 qc: passed
+spec: "Practical effective context for LLMs caps around 20% of the advertised window due to documented degradation starting well before the limit | observer — synthesizes published research and 30+ personal research sessions | practitioners planning LLM workflows who need a working number, not the brochure figure"
 ---
 
 # The 20% Heuristic: Why Your 1M Context Window Isn't What You Think

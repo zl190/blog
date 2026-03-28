@@ -6,6 +6,7 @@ tags: [AI, claude-code, research-methodology, personas]
 topics:
   - AI
 qc: passed
+spec: "Writing quality and methodological quality are separate problems requiring separate AI personas; TheResearcher audits the causal chain from theory to data to inference | creator — built TheResearcher persona to complement Spina's TheEditor | academic researchers who use AI for paper review and need methodological, not just prose, critique"
 ---
 
 # Why Your AI Editor Isn't Enough: Introducing TheResearcher Persona

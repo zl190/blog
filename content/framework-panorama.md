@@ -3,6 +3,7 @@ title: "The Stack I Didn't Design: A Map of AI-Assisted Production"
 format: blog
 status: published
 qc: passed
+spec: "A five-layer AI-assisted production stack emerged from solving repeated failure modes, not from upfront design | creator — built the entire pipeline-ops framework and all five layers described | developers who have shipped AI-assisted work and want to understand the structure they're already using"
 created: 2026-03-29
 language: en
 tags:

@@ -6,6 +6,7 @@ tags: [AI, claude-code, context-windows, workflow]
 topics:
   - AI
 qc: passed
+spec: "Multi-turn LLM sessions degrade because brainstorming and execution require separate contexts, not continuous conversation | creator — built cc-fuel-gauge and developed this workflow from direct experience | developers and researchers using Claude Code for iterative work"
 ---
 
 # Brainstorm Is Training, Execution Is Inference

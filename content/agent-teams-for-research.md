@@ -6,6 +6,7 @@ tags: [AI, claude-code, agent-workflows, research-methodology, tmux]
 topics:
   - AI
 qc: passed
+spec: "Agent team architectures from a conference slide can be implemented with tmux + claude -p today | contributor — extends Spina's ClaudeCodeTools framework with working bash commands and cost estimates | researchers and academics wanting to run parallel paper reviews"
 ---
 
 # Agent Teams for Academic Research: From Slides to Working Code

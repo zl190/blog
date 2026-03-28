@@ -4,6 +4,7 @@ format: blog
 status: published
 draft: false
 qc: passed
+spec: "File chaos persists because physical storage constraints and conceptual organization are separate problems that require separate solutions | creator — designed their own PKM system across iCloud, Git, Zotero, and Obsidian | knowledge workers frustrated by scattered files who are trying to unify everything into one place"
 published_url: https://zl190.github.io/blog/posts/physical-vs-conceptual-file-organization/
 published_date: 2026-01-27
 created: 2026-01-17

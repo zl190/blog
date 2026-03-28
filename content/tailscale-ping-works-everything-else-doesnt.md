@@ -9,6 +9,7 @@ tags: [Systems, networking, tailscale, debugging, wireguard, cgnat, macos]
 topics:
   - Systems
 qc: passed
+spec: "iPhone hotspot tethering routes Tailscale's CGNAT address range through the carrier, silently dropping all WireGuard traffic while tailscale ping falsely reports success | creator — debugged and solved their own Tailscale + iPhone hotspot + MacBook configuration | developers running Tailscale on mobile connections who encounter silent connectivity failures"
 ---
 
 # tailscale ping works, everything else doesn't: the CGNAT routing trap

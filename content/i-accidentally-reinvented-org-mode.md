@@ -4,6 +4,7 @@ format: blog
 status: published
 draft: false
 qc: passed
+spec: "Building a PKM system in Claude Code in one week unknowingly reproduces 40 years of org-mode patterns, suggesting Claude Code is Emacs's natural successor | creator — built the entire PKM and productivity system described | knowledge workers and developers curious about AI-native productivity tooling"
 published_url: https://zl190.github.io/blog/posts/i-accidentally-reinvented-org-mode/
 published_date: 2026-01-27
 created: 2026-01-19

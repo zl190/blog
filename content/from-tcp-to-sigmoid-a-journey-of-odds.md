@@ -11,6 +11,7 @@ topics:
 published_url: https://zl190.github.io/blog/posts/from-tcp-to-sigmoid-a-journey-of-odds/
 published_date: 2026-01-27
 qc: passed
+spec: "Following one networking question honestly connects TCP congestion control, log-odds algebra, sigmoid functions, and Bayesian inference through the same underlying transform | observer — student tracing a curiosity through four domains | students and practitioners who want to understand why sigmoid exists, not just how to use it"
 ---
 
 # From TCP to Sigmoid: A Journey of Odds

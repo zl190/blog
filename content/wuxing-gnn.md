@@ -4,6 +4,7 @@ type: blog
 status: published
 draft: false
 qc: passed
+spec: "Formalizing the Five Elements as a GNN message-passing graph reveals that the modeling process itself exposes a general tension between narrative and structural explanation | creator — built the wuxing-gnn framework and formalization | data scientists and ML practitioners curious about modeling symbolic systems, and anyone interested in what formalization costs"
 published_date: 2026-02-07
 created: 2026-02-07
 tags:
