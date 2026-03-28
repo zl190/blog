@@ -59,6 +59,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer({
       folderDefaultState: "open",
       folderClickBehavior: "collapse",
+      useSavedState: false,
       filterFn: (node) => node.slugSegment !== "tags",
       sortFn: (a, b) => {
         if (a.isFolder && b.isFolder) {
