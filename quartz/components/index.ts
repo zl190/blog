@@ -26,6 +26,7 @@ import ConditionalRender from "./ConditionalRender"
 import TagCloud from "./TagCloud"
 import TopicNav from "./TopicNav"
 import BackgroundArt from "./BackgroundArt"
+import RunningMascot from "./RunningMascot"
 
 export {
   ArticleTitle,
@@ -56,4 +57,5 @@ export {
   TagCloud,
   TopicNav,
   BackgroundArt,
+  RunningMascot,
 }

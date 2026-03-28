@@ -8,12 +8,13 @@ export const sharedPageComponents: SharedLayout = {
     Component.BackgroundArt({
       themes: [
         { name: "Mona Lisa", dir: "mona-lisa", images: [
-          "classic-hd.jpg", "pixel-art.jpg", "silhouette.jpg",
-          "neon-vaporwave.jpg", "pop-art.jpg",
+          "classic-hd.jpg", "sunglasses.jpg", "cat-face.jpg",
+          "vr-cyberpunk.jpg", "selfie.jpg", "pixel-16bit.jpg",
+          "anime.jpg", "moustache-classic.jpg", "deepdream-neural.jpg",
         ] },
       ],
     }),
-    Component.RunningCorgi(),
+    Component.RunningMascot(),
   ],
   afterBody: [
     Component.ConditionalRender({

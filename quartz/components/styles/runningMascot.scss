@@ -1,6 +1,6 @@
 @use "../../styles/variables.scss" as *;
 
-.running-corgi-banner {
+.running-mascot-banner {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.running-corgi {
+.running-mascot {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -19,11 +19,10 @@
   display: inline-block;
 }
 
-.running-corgi.sprite-mode {
+.running-mascot.sprite-mode {
   background-repeat: no-repeat;
 }
 
-// Turbo bar — top-right corner, clickable
 .turbo-bar {
   position: absolute;
   top: 8px;
@@ -48,13 +47,8 @@
     opacity: 0.8;
     border-color: var(--secondary);
 
-    .turbo-label {
-      color: var(--secondary);
-    }
-
-    .turbo-fill {
-      background: var(--secondary);
-    }
+    .turbo-label { color: var(--secondary); }
+    .turbo-fill { background: var(--secondary); }
   }
 }
 
@@ -82,15 +76,14 @@
   transition: width 0.3s ease;
 }
 
-.running-corgi-banner.art-hidden {
+.running-mascot-banner.art-hidden {
   display: none;
 }
 
 @media all and ($mobile) {
-  .running-corgi-banner {
+  .running-mascot-banner {
     height: 40px;
   }
-
   .turbo-bar {
     top: 4px;
     right: 8px;
