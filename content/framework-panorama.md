@@ -24,69 +24,7 @@ The honest framing: this is descriptive, not prescriptive. I'm not saying "here'
 
 Five layers, each one solving for something the layer above can't handle on its own.
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                    HUMAN DIRECTION                          │
-│  Not automatable: what to build, for whom, from what angle  │
-│  Quality standard: others' claims → find reference,        │
-│                    your own claims → run experiment         │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│                    METHODOLOGY LAYER                        │
-│                                                             │
-│  Template   → WHAT shape (spec, gives QC a ruler)          │
-│  Persona    → WHO/HOW (expert perspective, constrains       │
-│               generation mode)                              │
-│  Procedure  → WHEN/SEQUENCE (steps, gates, loops)          │
-│  Enforcement → physical block (hook, gate operator)        │
-│                                                             │
-│  Core principle: externalize the claim before acting        │
-│    Design first   = externalize intent     → what to build  │
-│    Test first     = externalize success    → done looks like│
-│    Diagnosis first = externalize root cause → what's wrong  │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│                    CODE PATTERN LAYER                       │
-│                                                             │
-│  Operator   run(storage, in_key, out_key) unified interface │
-│  Registry   @register → get("name") discover on demand      │
-│  Pluggable Prompt  same operator, swap template, new behavior│
-│  Pipeline   operators chained + gates interspersed          │
-│  Gate Operators:                                            │
-│    SpecGate       → design first enforcement                │
-│    TestGate       → test first enforcement                  │
-│    DiagnosisGate  → diagnosis first enforcement (= SM)      │
-│    QCGate         → independent audit enforcement           │
-│    EvidenceGate   → claim must have reference or experiment │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│                    EXECUTION INFRASTRUCTURE                 │
-│                                                             │
-│  Ralph loop        single-task reset (fresh context each   │
-│                    round)                                   │
-│  Brainstorm/Exec   cross-phase reset (explore → distill    │
-│                    → new session execute)                   │
-│    Brainstorm = training  (divergent, error-tolerant)       │
-│    Distill    = checkpoint (compress into brief/prompt)     │
-│    Execute    = inference  (clean context, distilled only)  │
-│  cc-fuel-gauge     monitors when to trigger reset           │
-│  Independence      separate claude -p / Docker = QC uncontaminated│
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│                    MODEL BEHAVIOR UNDERSTANDING             │
-│                                                             │
-│  PUA   push model limits, detect giving-up/laziness         │
-│  SM    = diagnosis first as minimum viable debugging        │
-│          not a separate concept — it's one gate operator    │
-│  Insight: what model says ≠ what model does (alignment gap) │
-│        → template constrains generation, persona constrains │
-│          perspective, but model is still a black box        │
-└─────────────────────────────────────────────────────────────┘
-```
+![The five-layer stack: Human Direction → Methodology → Code Patterns → Execution Infrastructure → Model Behavior](/static/images/panorama-diagram-1.png)
 
 I'll go layer by layer and explain where each piece came from and what problem it solved.
 
