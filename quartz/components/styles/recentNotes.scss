@@ -6,18 +6,42 @@
 
   & > ul.recent-ul {
     list-style: none;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding-left: 0;
 
     & > li {
-      margin: 1rem 0;
-      .section > .desc > h3 > a {
-        background-color: transparent;
+      margin: 0;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--lightgray);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .section > .desc > h3 {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 400;
+
+        & > a {
+          background-color: transparent;
+        }
       }
 
       .section > .meta {
-        margin: 0 0 0.5rem 0;
-        opacity: 0.6;
+        margin: 0.15rem 0 0 0;
+        opacity: 0.5;
+        font-size: 0.8rem;
+      }
+
+      .section > .tags {
+        margin: 0.15rem 0 0 0;
+        gap: 0.3rem;
+
+        & > li > a.tag-link {
+          font-size: 0.75rem;
+          padding: 0.1rem 0.3rem;
+        }
       }
     }
   }

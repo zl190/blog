@@ -10,7 +10,7 @@ export const sharedPageComponents: SharedLayout = {
       component: Component.RecentNotes({
         title: "Articles",
         limit: 50,
-        showTags: false,
+        showTags: true,
         filter: (f) => f.slug !== "index",
         sort: (f1, f2) => {
           const p1 = f1.frontmatter?.pinned ? 1 : 0
