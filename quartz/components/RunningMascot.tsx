@@ -27,10 +27,13 @@ interface Options {
 
 const defaultOptions: Options = {
   mascots: [
-    { name: "corgi", sprite: "/static/sprites/corgi-run.png", frames: 6, width: 64, height: 48 },
+    { name: "corgi", sprite: "/static/sprites/corgi-run.png", frames: 8, width: 48, height: 48 },
+    { name: "bunny", sprite: "/static/sprites/bunny-hop.png", frames: 8, width: 48, height: 48 },
+    { name: "ghost", sprite: "/static/sprites/ghost-float.png", frames: 8, width: 48, height: 48 },
   ],
   seasonal: [
-    { from: "03/20", to: "04/20", mascot: "corgi" },  // placeholder until bunny sprite exists
+    { from: "03/20", to: "04/20", mascot: "bunny" },    // Easter
+    { from: "10/15", to: "11/05", mascot: "ghost" },     // Halloween
   ],
   defaultMascot: "corgi",
   speed: 6,
