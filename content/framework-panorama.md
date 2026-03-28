@@ -133,7 +133,7 @@ The `pipeline-ops` repo is 177 lines and 24 passing tests. The pattern extracted
 
 On validation: the eval pipeline gave me construct validity evidence for the evaluation step specifically. The DimensionEvaluator (which scores responses across four quality dimensions) shows H1 p=0.0205 and H2 p=0.0135, with a dose-response gradient — higher-quality responses get higher scores, lower-quality ones get lower scores, and the ordering is consistent. That's not proof the framework is correct. It's proof that one operator does what it claims to do.
 
-One other thing I learned building this: I stole the interface, not the code. I looked at how DataFlow structured its pipeline operators, adopted that design, and wrote my own implementation from scratch, then ran experiments to confirm the design worked for my use case. The code I borrowed ran nowhere. The design pattern ran everywhere.
+One other thing I learned building this: I stole the interface, not the code. I looked at how a medical AI eval pipeline structured its pipeline operators, adopted that design, and wrote my own implementation from scratch, then ran experiments to confirm the design worked for my use case. The code I borrowed ran nowhere. The design pattern ran everywhere.
 
 ## Layer 4: Execution Infrastructure — Context Management and Independence
 
@@ -173,7 +173,7 @@ I've been tracking this explicitly because I kept noticing I had strong opinions
 | DiagnosisGate / SM effect | A/B test, S2 correct rate 0/3 → 2/3, N=3 |
 | Operator pattern extraction | `pipeline-ops/` 177 lines, 24 tests passed |
 | Beamer/Spina template reuse | Slides reproducible, 184 upstream stars |
-| Steal design, not code | Experiment confirmed: DataFlow design adopted, code rejected |
+| Steal design, not code | Experiment confirmed: eval pipeline design adopted, code rejected |
 
 | Not verified | Status |
 |--------------|--------|
