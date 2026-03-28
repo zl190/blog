@@ -29,6 +29,7 @@ Experiments in AI tooling, systems, and what actually works.
 
 ---
 
+- [[en/from-framework-to-15-articles|From Framework to 15 Articles]]
 - [[en/resource-stack-vision|The Agent Economy Isn't About Agents]]
 - [[en/last30days-research-engine|One Command, Multiple Sources: How I Built a Research Engine]]
 - [[en/the-researcher-persona|Why Your AI Editor Isn't Enough: Introducing TheResearcher]]
