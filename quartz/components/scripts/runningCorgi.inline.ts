@@ -18,9 +18,7 @@ document.addEventListener("nav", () => {
 
   const cfg: RunningCorgiConfig = JSON.parse(raw)
 
-  // Check shared visibility preference
-  const saved = localStorage.getItem("background-art-visible")
-  if (saved === "false") {
+  if (localStorage.getItem("background-art-visible") === "false") {
     banner.classList.add("art-hidden")
     return
   }
@@ -30,7 +28,6 @@ document.addEventListener("nav", () => {
   const useSprite = !!cfg.spriteSheet
 
   if (useSprite) {
-    // Sprite sheet mode
     const scale = isMobile ? 0.75 : 1
     const fw = Math.round(cfg.spriteFrameWidth * scale)
     const fh = Math.round(cfg.spriteFrameHeight * scale)
@@ -42,27 +39,22 @@ document.addEventListener("nav", () => {
     corgi.style.height = `${fh}px`
     corgi.style.backgroundImage = `url('${cfg.spriteSheet}')`
     corgi.style.backgroundSize = `${totalW}px ${fh}px`
-    // Frame animation via CSS steps
-    corgi.style.animation = `corgi-frames 0.4s steps(${cfg.spriteFrames}) infinite`
 
-    // Inject keyframes if not already present
+    // Inject keyframes once — never touch animation property again after setting
     if (!document.getElementById("corgi-keyframes")) {
-      const styleEl = document.createElement("style")
-      styleEl.id = "corgi-keyframes"
-      styleEl.textContent = `
-        @keyframes corgi-frames {
+      const s = document.createElement("style")
+      s.id = "corgi-keyframes"
+      s.textContent = `
+        @keyframes corgi-sprint {
           from { background-position: 0 0; }
           to { background-position: -${totalW}px 0; }
         }
-        @keyframes corgi-frames-flip {
-          from { background-position: -${totalW}px 0; }
-          to { background-position: 0 0; }
-        }
       `
-      document.head.appendChild(styleEl)
+      document.head.appendChild(s)
     }
+    // Set animation ONCE — never reassign
+    corgi.style.animation = `corgi-sprint 0.5s steps(${cfg.spriteFrames}) infinite`
   } else {
-    // Emoji fallback
     corgi.classList.remove("sprite-mode")
     const now = new Date()
     const m = now.getMonth()
@@ -72,7 +64,6 @@ document.addEventListener("nav", () => {
     else if (m === 9 && d >= 20) emoji = "👻"
     else if (m === 11 && d >= 15) emoji = "🦌"
     else if ((m === 0 && d >= 20) || (m === 1 && d <= 10)) emoji = "🐉"
-
     const size = isMobile ? Math.round(cfg.size * 0.75) : cfg.size
     corgi.textContent = emoji
     corgi.style.fontSize = `${size}px`
@@ -81,61 +72,51 @@ document.addEventListener("nav", () => {
   // Horizontal movement — continuous loop
   let animFrame: number | null = null
   let startTime: number | null = null
-  let phase: "going" | "returning" = "going"
-  const totalWidth = window.innerWidth + 80
+  let goingRight = true
+  const totalDist = window.innerWidth + 80
   const legDuration = cfg.speed
 
-  function runAnimation(timestamp: number) {
+  function tick(timestamp: number) {
     if (startTime === null) startTime = timestamp
     const elapsed = (timestamp - startTime) / 1000
 
-    if (phase === "going") {
-      if (elapsed >= legDuration) {
-        phase = "returning"
-        startTime = timestamp
-        if (useSprite) {
-          corgi!.style.transform = "translateY(-50%) scaleX(-1)"
-          corgi!.style.animation = `corgi-frames-flip 0.4s steps(${cfg.spriteFrames}) infinite`
-        } else {
-          corgi!.style.transform = "translateY(-50%) scaleX(-1)"
-        }
-        animFrame = requestAnimationFrame(runAnimation)
-        return
-      }
-      const progress = elapsed / legDuration
-      const x = -40 + progress * totalWidth
-      const bounceY = useSprite ? 0 : Math.sin(elapsed * 5 * 2 * Math.PI) * 4
-      corgi!.style.left = `${x}px`
-      if (!useSprite) {
-        corgi!.style.transform = `translateY(calc(-50% + ${bounceY}px))`
-      }
-    } else {
-      if (elapsed >= legDuration) {
-        // Restart: flip back and go again
-        phase = "going"
-        startTime = timestamp
-        if (useSprite) {
-          corgi!.style.transform = "translateY(-50%)"
-          corgi!.style.animation = `corgi-frames 0.4s steps(${cfg.spriteFrames}) infinite`
-        } else {
-          corgi!.style.transform = "translateY(-50%)"
-        }
-        animFrame = requestAnimationFrame(runAnimation)
-        return
-      }
-      const progress = elapsed / legDuration
-      const x = totalWidth - 40 - progress * totalWidth
-      corgi!.style.left = `${x}px`
+    if (elapsed >= legDuration) {
+      // Switch direction — only change transform, NOT animation
+      goingRight = !goingRight
+      startTime = timestamp
+      animFrame = requestAnimationFrame(tick)
+      return
     }
 
-    animFrame = requestAnimationFrame(runAnimation)
+    const progress = elapsed / legDuration
+    let x: number
+    if (goingRight) {
+      // Sprite faces RIGHT by default — no flip needed
+      x = -40 + progress * totalDist
+      corgi!.style.transform = "translateY(-50%)"
+    } else {
+      // Returning left — flip horizontally
+      x = totalDist - 40 - progress * totalDist
+      corgi!.style.transform = "translateY(-50%) scaleX(-1)"
+    }
+
+    corgi!.style.left = `${x}px`
+
+    // Emoji bounce (sprite already has built-in bounce)
+    if (!useSprite) {
+      const bounceY = Math.sin(elapsed * 5 * 2 * Math.PI) * 4
+      const flip = goingRight ? "" : " scaleX(-1)"
+      corgi!.style.transform = `translateY(calc(-50% + ${bounceY}px))${flip}`
+    }
+
+    animFrame = requestAnimationFrame(tick)
   }
 
   corgi.style.display = "inline-block"
   corgi.style.left = "-40px"
   startTime = null
-  phase = "going"
-  animFrame = requestAnimationFrame(runAnimation)
+  goingRight = true
+  animFrame = requestAnimationFrame(tick)
 
   window.addCleanup(() => {
     if (animFrame !== null) {

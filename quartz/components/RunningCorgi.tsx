@@ -18,9 +18,9 @@ const defaultOptions: Options = {
   speed: 6,
   size: 28,
   spriteSheet: "/static/sprites/corgi-run.png",
-  spriteFrames: 4,
-  spriteFrameWidth: 48,
-  spriteFrameHeight: 36,
+  spriteFrames: 6,
+  spriteFrameWidth: 64,
+  spriteFrameHeight: 48,
 }
 
 export default ((userOpts?: Partial<Options>) => {
