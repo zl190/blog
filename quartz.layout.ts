@@ -56,7 +56,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.TagCloud(),
+    Component.TopicNav(),
   ],
   right: [
     Component.ConditionalRender({
@@ -75,6 +75,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+    Component.TagCloud(),
   ],
 }
 
@@ -93,7 +94,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.TagCloud(),
+    Component.TopicNav(),
   ],
-  right: [],
+  right: [Component.TagCloud()],
 }

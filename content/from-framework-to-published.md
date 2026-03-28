@@ -5,10 +5,13 @@ status: published
 created: 2026-03-29
 language: en
 tags:
+  - AI
   - claude-code
   - methodology
   - writing
   - production
+topics:
+  - AI
 qc: passed
 ---
 

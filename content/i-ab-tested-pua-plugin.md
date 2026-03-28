@@ -6,6 +6,8 @@ created: 2026-03-18
 published_date: 2026-03-18
 language: en
 tags: [AI, claude-code, experiments, debugging]
+topics:
+  - AI
 qc: passed
 ---
 

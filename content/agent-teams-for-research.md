@@ -3,6 +3,8 @@ title: "Agent Teams for Academic Research: From Slides to Working Code"
 created: 2026-03-24
 date: 2026-03-27
 tags: [AI, claude-code, agent-workflows, research-methodology, tmux]
+topics:
+  - AI
 qc: passed
 ---
 

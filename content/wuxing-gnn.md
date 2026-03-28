@@ -11,6 +11,9 @@ tags:
   - graph-neural-network
   - chinese-philosophy
   - modeling
+  - Learning
+topics:
+  - Learning
 ---
 
 # 用图神经网络的视角理解五行：一个形式化框架

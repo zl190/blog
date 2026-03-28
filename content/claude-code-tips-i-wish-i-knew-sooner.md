@@ -8,6 +8,8 @@ created: 2026-03-18
 published_date: 2026-03-18
 language: en
 tags: [AI, claude-code, productivity, developer-tools]
+topics:
+  - AI
 ---
 
 # 7 Claude Code Tips That Actually Changed How I Work

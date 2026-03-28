@@ -7,7 +7,9 @@ qc: passed
 published_url: https://zl190.github.io/blog/posts/physical-vs-conceptual-file-organization/
 published_date: 2026-01-27
 created: 2026-01-17
-tags: [pkm, zettelkasten, file-organization]
+tags: [pkm, zettelkasten, file-organization, Learning]
+topics:
+  - Learning
 ---
 
 # Physical ≠ Conceptual: A Mental Model for File Chaos

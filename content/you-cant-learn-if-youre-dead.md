@@ -5,7 +5,9 @@ status: published
 published_url: https://zl190.github.io/blog/posts/you-cant-learn-if-youre-dead/
 published_date: 2026-01-27
 created: 2026-01-27
-tags: [tcp, networking, probability, risk-management, simulation]
+tags: [tcp, networking, probability, risk-management, simulation, Learning]
+topics:
+  - Learning
 qc: passed
 ---
 

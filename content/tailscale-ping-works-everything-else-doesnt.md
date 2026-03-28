@@ -5,7 +5,9 @@ status: published
 created: 2026-03-19
 published_date: 2026-03-19
 language: en
-tags: [networking, tailscale, debugging, wireguard, cgnat, macos]
+tags: [Systems, networking, tailscale, debugging, wireguard, cgnat, macos]
+topics:
+  - Systems
 qc: passed
 ---
 

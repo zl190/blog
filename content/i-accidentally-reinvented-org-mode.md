@@ -9,6 +9,8 @@ published_date: 2026-01-27
 created: 2026-01-19
 lang: en
 tags: [claude-code, emacs, org-mode, AI, PKM]
+topics:
+  - AI
 sources:
   - "[[claude-code-is-ai-emacs]]"
   - "[[time-tracking-needs-explicit-clocking]]"

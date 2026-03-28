@@ -2,7 +2,9 @@
 title: "The Agent Economy Isn't About Agents"
 created: 2026-03-28
 date: 2026-03-29
-tags: [economics, ai-agents, resource-stack, agent-economy, A2A]
+tags: [AI, economics, ai-agents, resource-stack, agent-economy, A2A]
+topics:
+  - AI
 qc: passed
 ---
 

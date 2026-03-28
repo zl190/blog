@@ -5,7 +5,9 @@ format: blog
 status: published
 created: 2026-01-27
 language: en
-tags: [math, ml, networking, learning]
+tags: [Systems, math, ml, networking, learning]
+topics:
+  - Systems
 published_url: https://zl190.github.io/blog/posts/from-tcp-to-sigmoid-a-journey-of-odds/
 published_date: 2026-01-27
 qc: passed
