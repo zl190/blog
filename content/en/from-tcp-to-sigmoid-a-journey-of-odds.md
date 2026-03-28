@@ -8,6 +8,7 @@ language: en
 tags: [math, ml, networking, learning]
 published_url: https://zl190.github.io/blog/posts/from-tcp-to-sigmoid-a-journey-of-odds/
 published_date: 2026-01-27
+qc: passed
 ---
 
 # From TCP to Sigmoid: A Journey of Odds
@@ -109,8 +110,6 @@ This is called "odds" in statistics. Probability 25% = odds 1:3.
 
 ## Where Does Sigmoid Come From?
 
-Here's where it gets fun.
-
 In machine learning, we use logistic regression for classification. The textbook says: "use sigmoid to squash outputs to [0,1], same range as probability."
 
 But why sigmoid specifically? Why that exact formula?
@@ -173,7 +172,7 @@ Logistic regression isn't just "using sigmoid." It's Bayesian updating in log-od
 
 ## Full Circle: Back to TCP
 
-Here's where it gets delicious. Remember how this started with TCP AIMD? There's a newer algorithm called **TCP CUBIC** that replaces linear growth with a cubic polynomial. And understanding why CUBIC uses cubic instead of logistic brings everything together.
+Remember how this started with TCP AIMD? There's a newer algorithm called **TCP CUBIC** that replaces linear growth with a cubic polynomial. TCP CUBIC explicitly rejects logistic because of inflection point behavior — and understanding why brings everything together.
 
 ### The CUBIC Equation
 

@@ -1,12 +1,12 @@
 ---
 title: "You Can't Learn If You're Dead"
-type: draft
 format: blog
 status: published
 published_url: https://zl190.github.io/blog/posts/you-cant-learn-if-youre-dead/
 published_date: 2026-01-27
 created: 2026-01-27
 tags: [tcp, networking, probability, risk-management, simulation]
+qc: passed
 ---
 
 # AIMD-vs-Martingale, Who will win?
@@ -122,8 +122,6 @@ Learning helps Martingale survive better (78%→47%). But still 50% bankruptcy�
 
 Learning doubles AIMD's profit. Why?
 
-**You can't learn if you're dead.**
-
 ```
 AIMD: survive → gather data → learn → adapt → profit
 Martingale: crash → no data → can't learn → dead
@@ -173,22 +171,13 @@ TCP's designers (unknowingly?) encoded a profound risk management principle:
 3. **Survival enables everything** — You can't profit, learn, or adapt if you're dead
 4. **Robustness over optimality** — A strategy that works regardless beats one that's optimal only when you guess right
 
-This applies everywhere:
-
-| Domain | Martingale Thinking | AIMD Thinking |
-|--------|---------------------|---------------|
-| Investing | Double down on losing positions | Cut losses quickly, let winners grow slowly |
-| Startups | Bet everything on one big launch | Small experiments, fail fast, iterate |
-| Career | All-in on one risky opportunity | Build optionality, survive setbacks |
-| Health | Ignore warning signs, crash later | Small adjustments, sustainable habits |
-
 ---
 
 ## Conclusion
 
 The Internet processes billions of packets per second using a 40-year-old algorithm that says: when things go wrong, back off fast; when things go well, proceed with caution.
 
-This isn't just good engineering. It's good life advice.
+TCP's designers didn't set out to create life advice. But the simulation is clear: the strategy that survives long enough to learn beats the strategy that bets everything on being right.
 
 Martingale is seductive because the math seems to work (it does, with infinite money). AIMD is boring because it never swings for the fences.
 

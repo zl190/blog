@@ -1,9 +1,9 @@
 ---
 title: "I Accidentally Reinvented org-mode"
-type: draft
 format: blog
-status: draft
-draft: true
+status: published
+draft: false
+qc: passed
 published_url: https://zl190.github.io/blog/posts/i-accidentally-reinvented-org-mode/
 published_date: 2026-01-27
 created: 2026-01-19
@@ -123,8 +123,6 @@ The dream of "talk to your computer and it does what you mean" — that's what L
 2024: Claude Code — "what if the glue was AI instead of elisp?"
 ```
 
-The torch passes. The vision continues.
-
 ---
 
 ## What AI Enables That Emacs Can't
@@ -139,11 +137,11 @@ My system has layers:
 - Inferred: AI tracks conversation topics
 - Reconstructed: File timestamps as fallback
 
-Forgetting isn't catastrophic. AI fills gaps.
+Forgetting isn't catastrophic. Last Tuesday I forgot to clock out for three hours. Instead of losing the data, Claude looked at my conversation history ("we discussed the MCP benchmark, then you asked about habit tracking") and reconstructed the time entries with reasonable accuracy.
 
 ### 2. Learning While Working
 
-Claude corrects my English as we work. Logs patterns. Surfaces recurring mistakes.
+In one session, I wrote "the system capture todos and send to Reminders" — Claude fixed it to "captures" and flagged that I drop third-person-singular *-s* regularly. Two weeks later, it caught the same pattern in a commit message before I published it.
 
 No elisp package does this. It's AI-native functionality.
 
@@ -175,15 +173,15 @@ By building, I learned. That's the Zettelkasten principle: understanding comes f
 
 ## The Uncomfortable Question
 
-If Claude Code can replicate org-mode in a week, what does that mean for complex software?
+I don't know if this would work for everyone. It worked for me because I had specific requirements (macOS-native apps, Obsidian, Zettelkasten) and was willing to iterate daily for a week. Someone with different needs or less tolerance for rough edges might bounce off it.
 
 Emacs represents decades of accumulated wisdom. org-mode is battle-tested. The edge cases are handled.
 
-But for 80% of users, 80% of the time — the AI-built version might be good enough. And it's infinitely more accessible.
+But for 80% of users, 80% of the time — the AI-built version might be good enough. And it's more accessible than learning elisp.
 
 The experts will still use Emacs. They'll have more control, more power, more stability.
 
-But the dream of "one system for everything" — that's now accessible to everyone.
+But the dream of "one system for everything" — that's now accessible to anyone with a Claude subscription ($20/month + API costs) and the willingness to write config files.
 
 ---
 
@@ -193,7 +191,7 @@ But the dream of "one system for everything" — that's now accessible to everyo
 
 2. **Reinventing wheels builds understanding.** Don't feel bad about rebuilding existing solutions. You'll understand them deeper.
 
-3. **AI democratizes power-user tools.** What took elisp expertise now takes English. The dream is accessible to everyone.
+3. **AI lowers the barrier for power-user tools.** What took elisp expertise now takes English — if you're willing to pay for a subscription and tinker with config files.
 
 4. **Emacs was right.** Text as universal format. Composable tools. Programmable environment. It just needed a successor to carry the torch.
 
