@@ -8,13 +8,8 @@ export const sharedPageComponents: SharedLayout = {
     Component.BackgroundArt({
       themes: [
         { name: "Mona Lisa", dir: "mona-lisa", images: [
-          "classic-hd.jpg", "sunglasses.jpg", "cat-face.jpg",
-          "vr-cyberpunk.jpg", "selfie.jpg", "pixel-16bit.jpg",
-          "anime.jpg", "moustache-classic.jpg", "deepdream-neural.jpg",
-          "caricature-donkeyhotey.jpg", "christ-pantocrator-style.jpg",
-          "duchamp-moustache-comparison.jpg", "illusion-diffusion.jpg",
-          "malevich-suprematist.jpg", "midjourney-ai.jpg",
-          "neural-american-gothic.jpg", "neural-sunday-afternoon.jpg",
+          "classic-hd.jpg", "sunglasses.jpg", "vr-cyberpunk.jpg",
+          "selfie.jpg", "caricature-donkeyhotey.jpg",
         ] },
       ],
     }),
