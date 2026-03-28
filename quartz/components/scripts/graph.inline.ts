@@ -647,8 +647,4 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     cleanupGlobalGraphs()
   })
 
-  // Auto-show global graph on index page (local graph is empty there)
-  if (slug === "index") {
-    void renderGlobalGraph()
-  }
 })

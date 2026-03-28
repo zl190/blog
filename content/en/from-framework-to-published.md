@@ -1,5 +1,5 @@
 ---
-title: "From Framework to 15 Articles"
+title: "From Framework to Published: How I Batch-Shipped a Blog"
 format: blog
 status: published
 created: 2026-03-29
@@ -12,9 +12,9 @@ tags:
 qc: passed
 ---
 
-I published 15 blog articles in one Claude Code session. Here's how the framework made it mechanical.
+I QC'd and published 16 blog articles in one Claude Code session. Here's how the framework made it mechanical.
 
-Before that session, I had zero published articles. Not zero good ones — zero published ones. The bottleneck wasn't ideas or drafts. It was the gap between "written" and "shipped": inconsistent quality, no audit trail, no enforcement that stopped me from publishing something I'd regret.
+Before that session, I had a handful of articles on the site but no production process. No style guide, no independent QC, no enforcement. Publishing was ad-hoc — some posts went up without review, others sat as drafts indefinitely. The bottleneck wasn't ideas. It was the gap between "written" and "shipped with confidence."
 
 The session didn't fix that by making me more disciplined. It fixed it by making discipline unnecessary.
 
