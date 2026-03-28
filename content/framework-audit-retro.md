@@ -6,7 +6,7 @@ tags: [AI, claude-code, methodology, retrospective]
 topics:
   - AI
   - Systems
-draft: true
+qc: passed
 spec: "Gates without physical enforcement have 0% execution rate — the framework described its own fix and didn't implement it | creator — built the framework, ran the audit, caught the failure | anyone building AI production pipelines who thinks having a framework means following it"
 ---
 
@@ -22,7 +22,7 @@ Layer 1 delegated to a machine. The one thing the framework says you can't do.
 
 I ran every layer against actual usage. Here's what I found.
 
-**Layer 2 — Methodology** had mixed results. The template (blog style guide) was used consistently. The personas (TheEditor, TheDesigner) worked for QC and layout. Procedure exists on paper. Enforcement worked perfectly — but only because the pre-commit hook is a physical block. You cannot push without `qc: passed` in frontmatter, so that gate runs 100% of the time. Everything without a physical mechanism ran 0% of the time.
+**Layer 2 — Methodology** had mixed results. The template (blog style guide) was used consistently. The personas (TheEditor, TheDesigner) worked for QC and layout. Procedure exists on paper. Enforcement worked perfectly — but only because the pre-commit hook is a physical block. You cannot push without `qc: passed` in frontmatter, so that gate runs 100% of the time. Every gate without a physical mechanism ran 0% of the time.
 
 **Layer 3 — Code Patterns** is where the numbers get bad. The framework describes five gate operators. Actual usage:
 
