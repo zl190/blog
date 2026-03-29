@@ -1,0 +1,8 @@
+extends: existence
+message: "AI smell — false balance pattern: '%s'. Make a claim; don't perform balance."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - "on one hand.*on the other hand"
+  - "on the one hand.*on the other hand"

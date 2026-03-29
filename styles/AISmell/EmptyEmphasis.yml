@@ -1,0 +1,13 @@
+extends: existence
+message: "AI smell — empty emphasis: '%s'. If it's important, the content should show it."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - "This is particularly important"
+  - "It'?s crucial to note"
+  - "It bears mentioning"
+  - "What'?s especially noteworthy"
+  - "It'?s important to note"
+  - "It'?s worth emphasizing"
+  - "It cannot be overstated"

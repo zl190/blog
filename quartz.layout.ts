@@ -67,6 +67,8 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.TopicNav(),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Backlinks(),
   ],
   right: [
     Component.ConditionalRender({
@@ -83,8 +85,6 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
     Component.TagCloud(),
   ],
 }

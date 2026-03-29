@@ -1,0 +1,12 @@
+extends: existence
+message: "AI smell — premature summary: '%s'. Summary phrases signal recap-mode thinking. Delete or move to the final paragraph."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - "In summary,"
+  - "To summarize,"
+  - "In conclusion,"
+  - "To conclude,"
+  - "In closing,"
+  - "To wrap up,"

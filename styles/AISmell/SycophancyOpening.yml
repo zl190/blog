@@ -1,0 +1,14 @@
+extends: existence
+message: "AI smell — sycophantic opener: '%s'. This is assistant-speak. Cut it."
+link: https://
+level: error
+ignorecase: true
+tokens:
+  - "Great question"
+  - "That'?s an excellent point"
+  - "Absolutely!"
+  - "That'?s a great"
+  - "What a great"
+  - "Excellent point"
+  - "Great point"
+  - "Wonderful question"

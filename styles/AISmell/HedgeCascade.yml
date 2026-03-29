@@ -1,0 +1,15 @@
+extends: existence
+message: "AI smell — hedge phrase: '%s'. State the claim directly."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - "it'?s worth noting( that)?"
+  - "might potentially"
+  - "could perhaps"
+  - "it should be noted( that)?"
+  - "one might argue"
+  - "it could be argued"
+  - "it is worth mentioning"
+  - "needless to say"
+  - "it goes without saying"

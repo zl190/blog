@@ -1,0 +1,7 @@
+extends: existence
+message: "AI smell — exhaustive listing: sentence may have 6+ comma-separated items. Trim the list or restructure."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - '\w[^,\n]+,[^,\n]+,[^,\n]+,[^,\n]+,[^,\n]+, and \w'

@@ -1,0 +1,14 @@
+extends: existence
+message: "AI smell — transition filler: '%s'. Cut it or restructure."
+link: https://
+level: warning
+ignorecase: true
+tokens:
+  - "That said,"
+  - "Moreover,"
+  - "Furthermore,"
+  - "It'?s important to consider"
+  - "Additionally,"
+  - "In addition,"
+  - "With that in mind,"
+  - "Having said that,"

@@ -15,7 +15,7 @@ That's the kind of failure that's easy to miss. If results are wrong, you notice
 
 ## What last30days is
 
-`/last30days` is an open-source Claude Code skill by mvanhorn that searches Reddit, X, YouTube, Hacker News, and several other sources concurrently, then synthesizes what people are currently saying about a topic. I use it daily. The HN component searches Algolia's HN API by keyword.
+`/last30days` is an open-source Claude Code skill by mvanhorn that searches Reddit, X, YouTube, Hacker News, and several other sources concurrently, then synthesizes what people are currently saying about a topic. I use it daily as part of my [[claude-code-tips-i-wish-i-knew-sooner|Claude Code workflow]]. The HN component searches Algolia's HN API by keyword.
 
 That's where the problem lives.
 
@@ -47,7 +47,7 @@ A few design decisions that weren't obvious:
 
 Silent failures are harder to catch than noisy ones. A search that returns wrong results is obviously broken. A search that returns plausible-looking results with something missing — you have no way to know unless you independently encounter the missing thing, which I only did because I happened to see the LiteLLM story on the front page that day.
 
-This applies beyond HN search. Any system that filters or retrieves results can have blind spots that are structurally invisible: the results you see look fine, the results you don't see are just gone. The only way to detect it is to audit from the output side — notice what should be there and isn't — rather than from the input side.
+This applies beyond HN search — it's the same class of problem as [[context-degradation-theory|context degradation]], where what's missing is invisible. Any system that filters or retrieves results can have blind spots that are structurally invisible: the results you see look fine, the results you don't see are just gone. The only way to detect it is to audit from the output side — notice what should be there and isn't — rather than from the input side.
 
 ## Where it stands
 
