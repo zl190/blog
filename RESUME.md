@@ -5,39 +5,38 @@
 
 ## Three-Layer Handoff Structure
 
-briefs/session9-brief.md      ← Layer 1: READ THIS.
-briefs/session9-rationale.md  ← Layer 2: On demand.
-session.jsonl                 ← Layer 3: Auto-saved. Forensic only.
+briefs/session10-brief.md      ← Layer 1: READ THIS.
+briefs/session10-rationale.md  ← Layer 2: On demand.
+session.jsonl                  ← Layer 3: Auto-saved. Forensic only.
 
 ## Latest Session
 
-**Session 9** — 2026-03-29 — `briefs/session9-brief.md`
+**Session 10** — 2026-03-29 — `briefs/session10-brief.md`
 
 ## Session Index
 
 | Session | Date | Brief | Rationale | Summary |
 |---------|------|-------|-----------|---------|
-| 6 | 2026-03-29 | (ctx) | (ctx) | Blog production pipeline + 16 articles QC'd/published |
-| 7 | 2026-03-29 | session7-brief.md | session7-rationale.md | Landing page redesign, Topics/Tags separation, Graph fix, content flattened, design framework |
-| 8 | 2026-03-29 | session8-brief.md | session8-rationale.md | Panorama blog, BackgroundArt plugin, Mona Lisa meme pool (17 variants), RunningMascot engine, turbo bar |
-| 9 | 2026-03-29 | session9-brief.md | session9-rationale.md | SpecGate + EvidenceGate enforcement, last30days authorship fix, retro blog, Mona Lisa trimmed 5, seasonal mascots |
+| 10 | 2026-03-29 | session10-brief.md | session10-rationale.md | TOC/Backlinks left, Vale linter, SM P0 pass, 5 arcs, visual style guide, interaction modes framework |
+| 9 | 2026-03-29 | session9-brief.md | session9-rationale.md | False authorship caught, SpecGate/EvidenceGate enforced, seasonal mascots, retro blog |
+| 8 | 2026-03-29 | session8-brief.md | session8-rationale.md | Panorama blog, BackgroundArt + RunningMascot plugins |
 
 ## Constraints (cumulative)
 
-- P8: don't ask, decide and execute
-- No `qc: passed` = no publish (pre-commit hook)
-- Independent QC agent, not the builder
-- Read blog-design.md + quartz-coding-guide.md before layout changes
-- Build locally before push (cache issues with index.css)
-- Never mention research-institute/research-lab in public content or commits
-- DataFlow name OK in public content
-- Mona Lisa pool: only memes and style 二创, no color filters. Currently 5 images.
-- Decorative elements must be user-toggleable
-- SpecGate: non-draft posts must have `spec:` in frontmatter (pre-commit enforced)
-- EvidenceGate: QC first item = verify author relationship to subject
-- SM: write one-line diagnosis before any blog edit or rewrite
-- Session blog: must have thesis, not just volume
+- P8 — don't ask, decide and execute
+- No qc:passed = no publish (pre-commit hook)
+- No spec: = no publish (pre-commit hook)
+- ValeGate: AISmell errors block, warnings informational
+- Independent QC agent, not builder
+- EvidenceGate: QC verifies author relationship first
+- Read blog-design.md + blog-visual.md + quartz-coding-guide.md before layout/visual changes
+- Build locally before pushing
+- Never mention research-institute/research-lab publicly. DataFlow OK.
+- SM diagnosis before any blog edit/rewrite
+- Session blog must have thesis
+- Topics ≠ Arcs (don't merge)
+- Three-file convention: blog-content / blog-design / blog-visual
 
 ## Resume Command
 
-read briefs/session9-brief.md then execute next steps
+read briefs/session10-brief.md then execute next steps

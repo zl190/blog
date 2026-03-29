@@ -2,10 +2,10 @@
 version: 2
 meta:
   project: "blog"
-  session: 9
-  timestamp: "2026-03-29T12:21:00+11:00"
+  session: 10
+  timestamp: "2026-03-29T22:00:00+11:00"
   trigger: user
-  context_pct: 35
+  context_pct: 40
   model: "claude-opus-4-6"
 
 current_task: null
@@ -18,21 +18,21 @@ decisions:
     - claim: "No hero/banner images — text-focused design"
       evidence: "Session 6 decision carried forward. CustomOgImages handles social cards."
       session: 6
-    - claim: "Blog QC pipeline: Template (blog.md) + Persona (TheEditor) + Procedure (Waves) + Enforcement (pre-commit hook)"
-      evidence: "Session 6 decision carried forward."
+    - claim: "Blog QC pipeline: Template (blog-content.md) + Persona (TheEditor) + Procedure (Waves) + Enforcement (pre-commit hook)"
+      evidence: "Session 6 decision carried forward. blog.md renamed to blog-content.md in session 10."
       session: 6
     # --- Session 7 ---
     - claim: "Landing page: tagline + RecentNotes (Julia Evans style date + title)"
-      evidence: "Implemented, pushed, deployed. Researched jvns.ca via Chrome."
+      evidence: "Implemented, pushed, deployed."
       session: 7
     - claim: "Content structure flattened — no en/zh folders, articles in content/ root"
-      evidence: "Session 7 moved 18 files. User chose flatten over breadcrumb removal."
+      evidence: "Session 7 moved 18 files."
       session: 7
     - claim: "Topics (AI/Systems/Learning) separated from Tags — TopicNav left, TagCloud right"
-      evidence: "User said 'tags 和 topics 分开, topics 是大类'. Components created."
+      evidence: "User said 'tags 和 topics 分开, topics 是大类'."
       session: 7
     - claim: "Explorer replaced with TopicNav in left sidebar"
-      evidence: "User asked 'explorer 要不显示topics呢'. Implemented."
+      evidence: "Implemented session 7."
       session: 7
     - claim: "Graph View: depth -1 (all nodes) on index, depth 1 (local) on articles"
       evidence: "Verified locally after 3 failed attempts."
@@ -41,99 +41,154 @@ decisions:
       evidence: "Research agent traced 7 articles to real dates Jan 27-Mar 28."
       session: 7
     - claim: "baseUrl updated to blog.ylab3.com"
-      evidence: "User said '改'. OG images, sitemap, RSS updated."
+      evidence: "User said '改'."
       session: 7
     - claim: "pipeline-ops pushed to GitHub"
       evidence: "https://github.com/zl190/pipeline-ops — 24/24 tests passing."
       session: 7
     - claim: "Design framework: blog-design.md (TheDesigner) + quartz-coding-guide.md (TheQuartzDev)"
-      evidence: "Written by research agent, registered in CLAUDE.md output styles."
+      evidence: "Written by research agent, registered in output styles."
       session: 7
     # --- Session 8 ---
     - claim: "Panorama blog published: 'The Stack I Didn't Design'"
       evidence: "QC passed, supply chain section added per user request."
       session: 8
     - claim: "BackgroundArt plugin: modular theme pools, CSS mask vignette, parallax, toggle"
-      evidence: "User drove iterations: corner→centered→mask vignette. '模块化 plugin 设计'."
+      evidence: "User drove iterations: corner→centered→mask vignette."
       session: 8
     - claim: "RunningCorgi refactored to RunningMascot: generic engine, seasonal rules, turbo bar"
-      evidence: "User: '如果我要兔子怎么办, 能不能有个通用engine'. Implemented."
+      evidence: "User: '如果我要兔子怎么办, 能不能有个通用engine'."
       session: 8
     - claim: "No research-institute/research-lab in public content, commits, or PRs"
-      evidence: "User: 'blog里不要提research-institute'. Git history verified clean. Feedback saved."
+      evidence: "User: 'blog里不要提research-institute'."
       session: 8
-    - claim: "DataFlow name OK in public — only org names (research-institute/research-lab) need anonymization"
-      evidence: "User: 'DataFlow不用匿名化, 不提research-institute就行'. Session 9 reverted over-anonymization."
+    - claim: "DataFlow name OK in public — only org names need anonymization"
+      evidence: "User: 'DataFlow不用匿名化'. Session 9 reverted over-anonymization."
       session: 9
     - claim: "Mona Lisa pool: only memes and style二创, no color filters"
-      evidence: "User: '不能用变色的, 要用meme'. PIL filters deleted, Imagen 4 memes generated."
+      evidence: "User: '不能用变色的, 要用meme'."
       session: 8
     - claim: "Session blog policy: 每session一篇有thesis的post"
-      evidence: "User: '每个session至少一篇post' (S8). Session 9 upgraded: thesis required after last30days fabrication."
+      evidence: "Session 9 upgraded: thesis required after last30days fabrication."
       session: 9
     - claim: "No Buy Me a Coffee — no audience signal yet"
       evidence: "User: '没有audience时放donation button显得desperate'."
       session: 8
     # --- Session 9 ---
     - claim: "Seasonal mascots: bunny (Easter 03/20-04/20), ghost (Halloween 10/15-11/05), corgi upgraded 8-frame 48x48"
-      evidence: "Sprites generated, config updated, build passes, pushed. Bunny active 03/29."
+      evidence: "Sprites generated, pushed. Bunny active 03/29."
       session: 9
     - claim: "last30days post rewritten from false 'How I Built' to PR #115 contribution story"
-      evidence: "User caught authorship error on phone. Unpublished immediately. Rewritten twice (v1=product review, v2=PR story). QC passed."
+      evidence: "User caught authorship error. Rewritten as 'The 920-Point Story That Didn't Exist'."
       session: 9
     - claim: "Panorama diagram: ASCII art replaced with Imagen 4 generated illustration"
-      evidence: "User selected diagram #1 from 2 generated options. Committed and pushed."
+      evidence: "User selected diagram #1."
       session: 9
     - claim: "Retro blog published: 'I Published a Framework and Then Didn't Follow It'"
-      evidence: "Framework self-audit: 1/5 gates operational. QC passed with new pipeline (evidence→prose→真的吗)."
+      evidence: "QC passed."
       session: 9
-    - claim: "SpecGate enforced: pre-commit hook requires spec: field (thesis | author relationship | target reader)"
-      evidence: "Hook updated, tested 3 scenarios (no spec=blocked, no qc=blocked, draft=exempt). 18 posts backfilled."
+    - claim: "SpecGate enforced: pre-commit hook requires spec: field"
+      evidence: "Hook updated, 18 posts backfilled."
       session: 9
     - claim: "EvidenceGate added to QC checklist as first item"
-      evidence: "SOP Content Publishing Pipeline updated. QC verifies factual premise before prose."
+      evidence: "SOP updated."
       session: 9
-    - claim: "Self-PUA converted from aspirational (0% execution, 4 sessions) to physical gate"
-      evidence: "User: '要么变成实际的gate, 要么dead letter删掉'. feedback_self-pua.md updated with escalation mechanism."
+    - claim: "Self-PUA converted from aspirational to physical gate"
+      evidence: "feedback_self-pua.md updated with escalation."
       session: 9
     - claim: "SM diagnosis-first required before any blog edit/rewrite"
-      evidence: "Added to CLAUDE.md Anti-Greedy Guards. Session 9 lesson: no diagnosis → wrong rewrite direction."
+      evidence: "Added to CLAUDE.md Anti-Greedy Guards."
       session: 9
     - claim: "Mona Lisa pool trimmed from 17 to 5 by user curation"
-      evidence: "User directly deleted 12 files. Remaining: classic, sunglasses, vr-cyberpunk, selfie, caricature."
+      evidence: "User deleted 12 files."
       session: 9
     - claim: "REGISTRY.md files as control panels for both asset pools"
-      evidence: "Created for backgrounds/mona-lisa/ and sprites/. Lists all assets + add/remove instructions."
+      evidence: "Created for mona-lisa/ and sprites/."
       session: 9
-    - claim: "Email Spina: name filled (Zisheng Liang 梁自胜), ready to send manually"
-      evidence: "Draft at seminar_claude_for_research/email-spina-draft.md. URLs verified live."
+    - claim: "Email Spina: name filled (Zisheng Liang 梁自胜)"
+      evidence: "Draft ready at seminar email file."
       session: 9
-  proposed: []
+    # --- Session 10 ---
+    - claim: "TOC + Backlinks moved from right to left sidebar"
+      evidence: "Committed 395fa0b, pushed. Right = Graph + TagCloud only."
+      session: 10
+    - claim: "Vale linter: 7 AISmell rules + write-good baseline, ValeGate in pre-commit"
+      evidence: "Committed 395fa0b, pushed. SycophancyOpening = error, rest = warning."
+      session: 10
+    - claim: "Wikilinks added to last30days + wuxing-gnn"
+      evidence: "Committed 395fa0b."
+      session: 10
+    - claim: "SM P0 smoke run passed: 15/15, $1.63"
+      evidence: "All 5 conditions solved all 3 tasks. Harness validated."
+      session: 10
+    - claim: "SM P1 on hold — user validates experiment design first"
+      evidence: "User: 'hold the sm run, I need validate it'."
+      session: 10
+    - claim: "5 blog arcs in blog-design.md: Theory, Framework, Practice, Research, Story"
+      evidence: "Written to blog-design.md § 5. Expert confirmed: arcs ≠ topics (different axes)."
+      session: 10
+    - claim: "Blog visual style guide: blog-visual.md"
+      evidence: "Created with Imagen 4 style block, scene vs schema rule, prompt templates, visual QC."
+      session: 10
+    - claim: "blog.md renamed to blog-content.md (three-file convention)"
+      evidence: "Renamed. Convention: blog-content / blog-design / blog-visual."
+      session: 10
+    - claim: "Interaction modes framework: Task/Brainstorm/Expert/Push"
+      evidence: "Written to knowledge/interaction-modes.md."
+      session: 10
+    - claim: "Blog and Platform: independent (Simon Willison model), connect via RSS"
+      evidence: "system-architect (opus) evaluated: architecturally incompatible, different audiences."
+      session: 10
+  proposed:
+    - claim: "Domain Pack architecture (~/.claude/packs/blog-website/)"
+      context: "Discussed as second axis (skills × packs). Architecture designed but not built."
+      session: 10
+    - claim: "Mobile roadmap: Phase 0 (Obsidian/GitHub Mobile) → Phase 1 (Blink+mosh) → Phase 2 (web UI)"
+      context: "User: 'next step aim is to work on my phone and on the move'."
+      session: 10
+    - claim: "SM 4-layer research decomposition: Design → Measurement → Pilot → Execution"
+      context: "User: 'decompose a research into different parts and mature each part first'."
+      session: 10
+    - claim: "Mode router as product opportunity (API stateless = needs external state)"
+      context: "User: 'maybe a new product opportunity, but needs research'."
+      session: 10
+    - claim: "Mode router T1: routing rules in CLAUDE.md"
+      context: "Framework written, integration pending."
+      session: 10
   rejected:
     - claim: "Hide Graph on index page"
-      reason: "User said '谁说的?' — Graph should show, not hide."
+      reason: "User said '谁说的?'"
       session: 7
     - claim: "Global graph popup on index page"
-      reason: "renderGlobalGraph() opens overlay, not sidebar widget. Wrong UX."
+      reason: "Wrong UX."
       session: 7
     - claim: "Date heatmap"
-      reason: "User: 17 articles too sparse, would expose low output frequency."
+      reason: "17 articles too sparse."
       session: 8
     - claim: "Buy Me a Coffee"
-      reason: "No audience signal yet."
+      reason: "No audience signal."
       session: 8
     - claim: "Color filter variants for Mona Lisa"
-      reason: "User: '不能用变色的, 有点奇怪, 要用就用meme'."
+      reason: "User: '不能用变色的'."
       session: 8
     - claim: "Mona Lisa variant matrix"
-      reason: "Trimmed to 5 images — matrix not needed."
+      reason: "Trimmed to 5 images."
       session: 9
     - claim: "Professional corgi sprite upgrade"
-      reason: "Cosmetic, not priority. Current PIL sprite functional."
+      reason: "Cosmetic, not priority."
       session: 9
     - claim: "Imagen prompt as output style"
-      reason: "Premature — will write when next needed."
+      reason: "Premature."
       session: 9
+    - claim: "Public arcs page (content/arcs.md)"
+      reason: "User: '太复杂, 显示的也不对, 回滚'. Deleted."
+      session: 10
+    - claim: "Merge Topics and Arcs into one system"
+      reason: "Expert: different axes (subject taxonomy vs argument position). Different audiences."
+      session: 10
+    - claim: "Merge Blog and Platform codebases"
+      reason: "Expert: architecturally incompatible (SSG vs dynamic), different audiences (public vs self)."
+      session: 10
 
 discoveries:
   - fact: "Quartz index.css has no content hash — browser cache persists across deploys"
@@ -143,26 +198,44 @@ discoveries:
     source: "Session 7 Explorer debugging"
     session: 7
   - fact: "Graph depth:-1 renders all nodes in sidebar local graph widget"
-    source: "Session 7 Graph View fix, attempt 4"
+    source: "Session 7 Graph View fix"
     session: 7
   - fact: "Google Imagen 4 works via google.genai SDK with GOOGLE_API_KEY"
-    source: "Session 8 meme generation agent"
+    source: "Session 8 meme generation"
     session: 8
   - fact: "At 5% opacity, only high-contrast/bold modifications are recognizable"
-    source: "Session 8 Mona Lisa variant research"
+    source: "Session 8 Mona Lisa research"
     session: 8
   - fact: "window.addCleanup() required in Quartz SPA mode to prevent listener leaks"
-    source: "Session 8 quartz-coding-guide.md"
+    source: "Session 8 quartz-coding-guide"
     session: 8
   - fact: "Imagen 4 model name: imagen-4.0-generate-001 (not preview)"
-    source: "Session 9 API error → list models"
+    source: "Session 9 API error"
     session: 9
   - fact: "Pre-commit hook = 100% execution; memory rules without hooks = 0% execution"
     source: "Session 9 framework audit"
     session: 9
-  - fact: "QC without EvidenceGate passes polished lies (builder fabricates, QC reviews prose)"
+  - fact: "QC without EvidenceGate passes polished lies"
     source: "Session 9 last30days incident"
     session: 9
+  - fact: "write-good.So rule defaults to error level, blocks commit on 'So...' sentences"
+    source: "Session 10 ValeGate debugging"
+    session: 10
+  - fact: "Quartz filters draft:true pages — they return 404"
+    source: "Session 10 arcs page preview"
+    session: 10
+  - fact: "PUA token overhead: 515K input tokens vs Bare 235K at P0 scale"
+    source: "Session 10 SM smoke run"
+    session: 10
+  - fact: "Style anchor system: one permanent prompt block embedded in every Imagen generation"
+    source: "Session 10 visual research"
+    session: 10
+  - fact: "Scene vs Schema rule: AI illustration for landscapes, diagrams for labeled relationships"
+    source: "Session 10 visual research"
+    session: 10
+  - fact: "Pre-framework work (Feb 7 - Mar 18): greedy coding, Dobby, warming dashboard (9→3 killed), mixed-good paper (UCLA 4/30)"
+    source: "Session 10 repo/memory archaeology"
+    session: 10
 
 constraints:
   - rule: "P8 — don't ask, decide and execute"
@@ -172,147 +245,170 @@ constraints:
     reason: "Blog quality gate"
     expires: null
   - rule: "No spec: = no publish (pre-commit hook enforced)"
-    reason: "Session 9: builder fabricated angle without spec. SpecGate prevents this."
+    reason: "SpecGate prevents fabrication without thesis."
+    expires: null
+  - rule: "ValeGate: AISmell errors block commit, warnings informational"
+    reason: "Forward-looking enforcement. Existing posts may have warnings."
     expires: null
   - rule: "Independent QC agent reviews, not the builder"
     reason: "Popper independence principle"
     expires: null
   - rule: "QC first item: verify author relationship to subject (EvidenceGate)"
-    reason: "Session 9: QC reviewed prose but missed false authorship claim"
+    reason: "Session 9 last30days incident"
     expires: null
-  - rule: "Read blog-design.md + quartz-coding-guide.md before layout changes"
-    reason: "Session 7 had 3 failed Graph fixes from not understanding Quartz internals"
+  - rule: "Read blog-design.md + blog-visual.md + quartz-coding-guide.md before layout/visual changes"
+    reason: "Three-file convention. Each has its own persona and QC."
     expires: null
   - rule: "Build locally and verify before pushing"
     reason: "index.css cache issue"
     expires: null
   - rule: "Never mention research-institute/research-lab in public content, commits, or PRs. DataFlow OK."
-    reason: "Org names confidential, tool names generic enough"
+    reason: "Org names confidential"
     expires: null
   - rule: "Mona Lisa pool: only memes and style二创, no color filters"
-    reason: "Color filters look like broken images at 5% opacity"
+    reason: "Color filters look broken at 5% opacity"
     expires: null
   - rule: "Decorative elements must be user-toggleable"
-    reason: "User: '用户可以关'"
+    reason: "User preference"
     expires: null
   - rule: "SM: write one-line diagnosis before any blog edit/rewrite"
-    reason: "Session 9: without diagnosis, rewrote last30days as product review (wrong direction)"
+    reason: "Session 9 lesson"
     expires: null
-  - rule: "Session blog must have thesis — volume without quality standard = fabrication"
-    reason: "Session 9: volume pressure produced false authorship post"
+  - rule: "Session blog must have thesis"
+    reason: "Volume without quality = fabrication"
+    expires: null
+  - rule: "Topics ≠ Arcs — do not merge"
+    reason: "Different axes: subject taxonomy (reader) vs argument position (author)"
+    expires: null
+  - rule: "Blog three-file convention: blog-content.md / blog-design.md / blog-visual.md"
+    reason: "Each governs one dimension with its own persona and QC"
     expires: null
 
 state_changes:
   files_created:
-    - "briefs/session9-brief.md"
-    - "briefs/session9-rationale.md"
-    - "content/framework-audit-retro.md"
-    - "quartz/static/sprites/bunny-hop.png"
-    - "quartz/static/sprites/ghost-float.png"
-    - "quartz/static/images/panorama-diagram-1.png"
-    - "quartz/static/backgrounds/mona-lisa/REGISTRY.md"
-    - "quartz/static/sprites/REGISTRY.md"
-    - "~/.claude/memory/feedback_session-blog-policy.md"
+    - "briefs/session10-brief.md"
+    - "briefs/session10-rationale.md"
+    - ".vale.ini"
+    - "styles/AISmell/ (7 rule files)"
+    - "styles/write-good/ (9 files + meta.json)"
+    - "~/.claude/memory/knowledge/output-styles/blog-visual.md"
+    - "~/.claude/memory/knowledge/interaction-modes.md"
+    - "~/.claude/memory/project_mode-router-opportunity.md"
+    - "~/.claude/memory/project_early-work-timeline.md"
+    - "~/Developer/personal/sm-vs-pua/scripts/run.py"
+    - "~/Developer/personal/sm-vs-pua/scripts/evaluate.py"
+    - "~/Developer/personal/sm-vs-pua/scripts/analyze.py"
+    - "~/Developer/personal/sm-vs-pua/conditions/padding.md"
   files_modified:
-    - "RESUME.md"
-    - "quartz.layout.ts"
-    - "quartz/components/RunningMascot.tsx"
-    - "quartz/static/sprites/corgi-run.png"
-    - "content/framework-panorama.md (diagram + DataFlow restore)"
-    - "content/last30days-research-engine.md (full rewrite)"
-    - "content/*.md (18 posts — spec: field backfill)"
-    - ".git/hooks/pre-commit (SpecGate added)"
-    - "~/.claude/memory/sops.md (SpecGate + EvidenceGate in pipeline)"
-    - "~/.claude/memory/feedback_self-pua.md (aspirational → physical gate)"
-    - "~/.claude/memory/feedback_content-supply-chain.md (EvidenceGate added)"
-    - "~/.claude/memory/feedback_no-research-institute-in-blog.md (DataFlow OK)"
-    - "~/.claude/CLAUDE.md (SM in Anti-Greedy Guards)"
-    - "~/Developer/personal/seminar_claude_for_research/email-spina-draft.md (name filled)"
+    - "quartz.layout.ts (TOC + Backlinks → left)"
+    - "content/last30days-research-engine.md (wikilinks added)"
+    - "content/wuxing-gnn.md (wikilinks added)"
+    - ".git/hooks/pre-commit (ValeGate added)"
+    - "~/.claude/memory/knowledge/output-styles/blog-design.md (arcs § 5 + state snapshot)"
+    - "~/.claude/memory/MEMORY.md (3 new entries)"
+  files_renamed:
+    - "blog.md → blog-content.md"
   files_deleted:
-    - "quartz/static/backgrounds/mona-lisa/ (12 images trimmed by user)"
+    - "content/arcs.md (rolled back)"
+    - "quartz/static/images/panorama-diagram-2.png (truncated, discarded)"
   services_deployed:
-    - "blog.ylab3.com via GitHub Pages (15 pushes this session)"
+    - "blog.ylab3.com via GitHub Pages (395fa0b)"
   configs_changed:
-    - "quartz.layout.ts (Mona Lisa images list)"
-    - ".git/hooks/pre-commit (SpecGate + QCGate)"
+    - ".vale.ini (Vale + write-good + AISmell)"
+    - ".git/hooks/pre-commit (ValeGate section)"
 
 session_log:
+  - session: 10
+    date: 2026-03-29
+    summary: "Session 10 moved TOC/Backlinks left, added Vale linter, ran SM P0 smoke ($1.63 pass), defined 5 arcs, created visual style guide, traced early work timeline, designed interaction modes framework"
+    tasks:
+      - task: "TOC + Backlinks → left sidebar"
+        status: done
+        outcome: "Committed + pushed (395fa0b)"
+      - task: "Vale linter (7 AISmell rules + ValeGate)"
+        status: done
+        outcome: "Committed + pushed. write-good = warning, SycophancyOpening = error."
+      - task: "SM P0 smoke run"
+        status: done
+        outcome: "15/15 passed, $1.63. P1 on hold per user."
+      - task: "Blog arcs"
+        status: done
+        outcome: "5 arcs in blog-design.md. Public arcs page rejected + rolled back."
+      - task: "Blog visual style guide"
+        status: done
+        outcome: "blog-visual.md created (Imagen 4 style block, scene vs schema, QC)."
+      - task: "Early work archaeology"
+        status: done
+        outcome: "Feb 7 - Mar 18 timeline traced. Memory written."
+      - task: "Interaction modes framework"
+        status: done
+        outcome: "4 modes (Task/Brainstorm/Expert/Push). knowledge file written."
+      - task: "Expert evaluations"
+        status: done
+        outcome: "Topics≠Arcs (keep separate), Blog≠Platform (stay independent)."
   - session: 9
     date: 2026-03-29
-    summary: "Session 9 caught false authorship post, rewrote as PR story, published framework retro, enforced SpecGate/EvidenceGate, added seasonal mascots, curated Mona Lisa pool"
+    summary: "Session 9 caught false authorship post, rewrote as PR story, published framework retro, enforced SpecGate/EvidenceGate, added seasonal mascots"
     tasks:
-      - task: "Seasonal mascots (bunny + ghost + corgi upgrade)"
+      - task: "last30days rewrite + SpecGate + EvidenceGate + retro blog"
         status: done
-        outcome: "3 sprites, seasonal config, bunny active for Easter"
-      - task: "last30days post: unpublish → rewrite → QC → publish"
-        status: done
-        outcome: "'The 920-Point Story That Didn't Exist' — PR #115 contribution story"
-      - task: "Framework retro blog"
-        status: done
-        outcome: "'I Published a Framework and Then Didn't Follow It' — 1/5 gates, enforcement audit"
-      - task: "SpecGate enforcement"
-        status: done
-        outcome: "Pre-commit hook + 18 posts backfilled with spec: field. Tested 3 scenarios."
-      - task: "EvidenceGate + Self-PUA + SM gates"
-        status: done
-        outcome: "SOPs, memory, CLAUDE.md all updated"
-      - task: "Mona Lisa pool curation"
-        status: done
-        outcome: "User trimmed 17→5. Config + REGISTRY synced."
-      - task: "Panorama diagram"
-        status: done
-        outcome: "ASCII → Imagen 4 illustration"
-      - task: "Blog audit (19 posts)"
-        status: done
-        outcome: "All clean except last30days (fixed)"
+        outcome: "All enforced via pre-commit hooks"
   - session: 8
     date: 2026-03-29
-    summary: "Session 8 published panorama blog, built BackgroundArt + RunningMascot plugins, generated Mona Lisa meme pool"
+    summary: "Session 8 published panorama blog, built BackgroundArt + RunningMascot plugins"
     tasks:
-      - task: "Panorama blog"
+      - task: "Panorama blog + plugins"
         status: done
         outcome: "Published with QC"
-      - task: "BackgroundArt plugin"
-        status: done
-        outcome: "Theme pools, parallax, toggle, dark/light opacity"
-      - task: "RunningMascot engine"
-        status: done
-        outcome: "Generic mascot engine with seasonal rules and turbo bar"
-  - session: 7
-    date: 2026-03-29
-    summary: "Session 7 redesigned landing page, separated Topics/Tags, fixed Graph View, created design framework"
-    tasks:
-      - task: "Landing page redesign"
-        status: done
-        outcome: "Julia Evans style, RecentNotes, TopicNav, TagCloud"
-      - task: "Graph View fix"
-        status: done
-        outcome: "depth:-1 on index after 3 failed attempts"
 
 next_steps:
   - priority: P1
     task: "Email Spina"
     dependency: null
-    context: "Name filled, send manually. Draft at seminar_claude_for_research/email-spina-draft.md"
+    context: "Name filled (Zisheng Liang 梁自胜), send manually"
   - priority: P1
-    task: "Vale linter for blog"
-    dependency: null
-    context: "9 AI smell items → YAML rules. Physical enforcement of prose quality."
+    task: "SM experiment: user validates Layer 1 (task design)"
+    dependency: "User action"
+    context: "Review 3 P0 tasks + ground truth at sm-vs-pua/tasks/"
   - priority: P1
-    task: "SM smoke run ($8)"
+    task: "Mode router T1: integrate routing rules into CLAUDE.md"
     dependency: null
-    context: "Experiment design at sm-vs-pua/.claude/CLAUDE.md. Ready to execute."
+    context: "Framework at knowledge/interaction-modes.md"
   - priority: P2
     task: "TIL format (content/til/)"
     dependency: null
     context: "Simon Willison pattern. Low-friction posts with thesis."
   - priority: P2
+    task: "Warming dashboard blog post"
+    dependency: null
+    context: "Arc 2. Thesis: 研究不是证明你的想法，是杀死不配活的想法"
+  - priority: P2
+    task: "Domain Pack: build blog-website pack"
+    dependency: null
+    context: "Consolidate blog-content + blog-design + blog-visual into ~/.claude/packs/"
+  - priority: P2
+    task: "Mobile: install Blink on phone"
+    dependency: null
+    context: "Phase 1 of mobile roadmap. mosh to remote-server already configured."
+  - priority: P2
+    task: "Mode router research: existing solutions"
+    dependency: null
+    context: "Is stateful LLM mode routing a product? project_mode-router-opportunity.md"
+  - priority: P2
     task: "Revise 'From Framework to Published'"
     dependency: null
-    context: "Add practical pipeline walkthrough (source→builder→QC→publish with cost/time)"
+    context: "Add practical pipeline walkthrough"
+  - priority: P3
+    task: "Greedy coding → anti-greedy blog post"
+    dependency: null
+    context: "Arc 2. Source at Obsidian 0-inbox/2026-02-24-*"
   - priority: P3
     task: "Revise i-accidentally-reinvented-org-mode"
     dependency: null
-    context: "REVISE items remain from QC"
+    context: "REVISE items remain"
+  - priority: P3
+    task: "Topics 404 investigation on production"
+    dependency: null
+    context: "User reported 404 on phone. Works on localhost."
 
-resume_command: "read /Users/zl190/Developer/personal/blog/briefs/session9-brief.md then execute next steps"
+resume_command: "read /Users/zl190/Developer/personal/blog/briefs/session10-brief.md then execute next steps"
