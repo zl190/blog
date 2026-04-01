@@ -1,0 +1,17 @@
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+
+  a {
+    color: var(--gray);
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}

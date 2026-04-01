@@ -35,12 +35,7 @@ export const sharedPageComponents: SharedLayout = {
       condition: (page) => page.fileData.slug === "index",
     }),
   ],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/zl190",
-      "Buy Me a Coffee": "https://buymeacoffee.com/ylab3",
-    },
-  }),
+  footer: Component.Footer(),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -70,6 +65,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TopicNav(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+    Component.SocialLinks({
+      links: {
+        GitHub: "https://github.com/zl190",
+        "Buy Me a Coffee": "https://buymeacoffee.com/ylab3",
+      },
+    }),
   ],
   right: [
     Component.ConditionalRender({

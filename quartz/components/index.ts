@@ -27,6 +27,7 @@ import TagCloud from "./TagCloud"
 import TopicNav from "./TopicNav"
 import BackgroundArt from "./BackgroundArt"
 import RunningMascot from "./RunningMascot"
+import SocialLinks from "./SocialLinks"
 
 export {
   ArticleTitle,
@@ -58,4 +59,5 @@ export {
   TopicNav,
   BackgroundArt,
   RunningMascot,
+  SocialLinks,
 }
