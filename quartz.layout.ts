@@ -38,6 +38,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/zl190",
+      "Buy Me a Coffee": "https://buymeacoffee.com/ylab3",
     },
   }),
 }
