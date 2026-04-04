@@ -10,6 +10,17 @@ Personal blog on AI, development, and technology.
 
 **Live at:** https://zl190.github.io/blog/
 
+## Quick Start
+
+```bash
+git clone https://github.com/zl190/blog.git
+cd blog
+npm install
+npx quartz build --serve
+```
+
+Visit http://localhost:8080 to preview.
+
 ## Stack
 
 - [Quartz 4](https://quartz.jzhao.xyz/) — Static site generator with backlinks and graph view

@@ -54,7 +54,7 @@ tailscale ping 100.80.100.40
 ```
 
 ```
-pong from remote-server (100.80.100.40) via DERP(iad) in 480ms
+pong from homeserver (100.80.100.40) via DERP(iad) in 480ms
 ```
 
 Pong. Peer is reachable. So why is SSH timing out?

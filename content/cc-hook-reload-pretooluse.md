@@ -26,9 +26,9 @@ PreToolUse——没反应。跑`git push`，直接过了。debug日志一个字�
 
 ## 诊断
 
-在remote-server上开了个干净环境：`claude -p --settings /tmp/test-settings.json`。两个hook都能跑。所以hook本身没问题。
+在一台干净的远程机器上开了个新环境：`claude -p --settings /tmp/test-settings.json`。两个hook都能跑。所以hook本身没问题。
 
-区别在哪？remote-server上是新session。本地是mid-session加的hook。
+区别在哪？远程机器上是新session。本地是mid-session加的hook。
 
 假设：**CC在session启动时缓存PreToolUse hook，mid-session修改settings.json不会重新加载。**
 

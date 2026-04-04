@@ -83,8 +83,4 @@ If you're building agents and hitting context limits, the curriculum won't help 
 
 ---
 
-*The full source audit is at [nano-agent-anatomy](https://github.com/zl190/nano-agent-anatomy) if you want to see exactly which lectures and slide decks I read.*
-
----
-
 *This is part of a series on what production agent source code reveals that courses don't cover. Subscribe to get the next issue.*

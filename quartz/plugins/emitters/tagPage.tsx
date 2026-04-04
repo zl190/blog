@@ -23,7 +23,10 @@ function computeTagInfo(
   locale: keyof typeof TRANSLATIONS,
 ): [Set<string>, Record<string, ProcessedContent>] {
   const tags: Set<string> = new Set(
-    allFiles.flatMap((data) => data.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes),
+    allFiles
+      .flatMap((data) => data.frontmatter?.tags ?? [])
+      .flatMap(getAllSegmentPrefixes)
+      .map((t) => t.toLowerCase()),
   )
 
   // add base tag
@@ -148,7 +151,9 @@ export const TagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (userOpts) 
 
         // If a file with tags changed, we need to update those tag pages
         const fileTags = changeEvent.file.data.frontmatter?.tags ?? []
-        fileTags.flatMap(getAllSegmentPrefixes).forEach((tag) => affectedTags.add(tag))
+        fileTags
+          .flatMap(getAllSegmentPrefixes)
+          .forEach((tag) => affectedTags.add(tag.toLowerCase()))
 
         // Always update the index tag page if any file changes
         affectedTags.add("index")
