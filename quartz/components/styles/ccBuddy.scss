@@ -3,7 +3,9 @@
 .cc-buddy-root {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  // Align with the page grid's left sidebar start
+  // Page max-width = 1500px, centered. Left sidebar = 320px.
+  left: max(24px, calc((100vw - 1500px) / 2 + 24px));
   z-index: 50;
   cursor: pointer;
   opacity: 0.5;
@@ -89,6 +91,13 @@
   0% { transform: translateY(0); }
   40% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
+}
+
+// Tablet: align with sidebar
+@media all and ($tablet) {
+  .cc-buddy-root {
+    left: 24px;
+  }
 }
 
 // Mobile: smaller, tighter
