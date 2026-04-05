@@ -28,6 +28,8 @@ import TopicNav from "./TopicNav"
 import BackgroundArt from "./BackgroundArt"
 import RunningMascot from "./RunningMascot"
 import SocialLinks from "./SocialLinks"
+import BuddyEgg from "./BuddyEgg"
+import CCBuddy from "./CCBuddy"
 
 export {
   ArticleTitle,
@@ -60,4 +62,6 @@ export {
   BackgroundArt,
   RunningMascot,
   SocialLinks,
+  BuddyEgg,
+  CCBuddy,
 }

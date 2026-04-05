@@ -1,0 +1,174 @@
+@use "../../styles/variables.scss" as *;
+
+// ─── Root container ──────────────────────────────────────────────────────────
+.buddy-egg-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  pointer-events: none; // children re-enable as needed
+}
+
+// ─── Egg ─────────────────────────────────────────────────────────────────────
+.buddy-egg {
+  pointer-events: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.12);
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+}
+
+.buddy-egg-icon {
+  font-size: 26px;
+  line-height: 1;
+  display: block;
+  // Idle wobble — starts paused, enabled on first click
+  animation: egg-wobble 0.35s ease-in-out;
+  animation-play-state: paused;
+}
+
+// Crack overlay — opacity controlled by JS via --buddy-cracks CSS var
+.buddy-egg-cracks {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: var(--buddy-cracks, 0);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+
+  &::before {
+    content: "✦";
+    color: #c88b3a;
+    font-size: 20px;
+  }
+}
+
+// Shake on click — added/removed by JS
+.buddy-egg.shaking .buddy-egg-icon {
+  animation-play-state: running;
+}
+
+// Pre-hatch intense shake
+.buddy-egg.pre-hatch .buddy-egg-icon {
+  animation: egg-shake 0.15s ease-in-out infinite;
+}
+
+// ─── Pet ─────────────────────────────────────────────────────────────────────
+.buddy-pet {
+  pointer-events: auto;
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: none; // hidden until hatched
+  align-items: flex-end;
+  justify-content: center;
+
+  &.visible {
+    display: flex;
+  }
+}
+
+.buddy-pet-body {
+  font-size: 28px;
+  line-height: 1;
+  display: block;
+  transform-origin: bottom center;
+  animation: buddy-bob 2.4s ease-in-out infinite;
+}
+
+// Sleeping state
+.buddy-pet.sleeping .buddy-pet-body {
+  animation: none;
+  filter: grayscale(0.4);
+}
+
+.buddy-pet-zzz {
+  position: absolute;
+  top: -2px;
+  right: 2px;
+  font-size: 10px;
+  font-family: monospace;
+  color: var(--gray);
+  opacity: 0;
+  pointer-events: none;
+  animation: buddy-zzz 2s ease-in-out infinite;
+
+  .buddy-pet.sleeping & {
+    opacity: 1;
+    animation: buddy-zzz-float 2s ease-in-out infinite;
+  }
+}
+
+// ─── Hatch burst ─────────────────────────────────────────────────────────────
+.buddy-egg-root.hatching .buddy-egg {
+  animation: egg-burst 0.4s ease-out forwards;
+}
+
+// ─── Keyframes ───────────────────────────────────────────────────────────────
+@keyframes egg-wobble {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-8deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes egg-shake {
+  0%   { transform: translateX(0) rotate(0deg); }
+  20%  { transform: translateX(-3px) rotate(-5deg); }
+  40%  { transform: translateX(3px) rotate(5deg); }
+  60%  { transform: translateX(-2px) rotate(-3deg); }
+  80%  { transform: translateX(2px) rotate(3deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+@keyframes egg-burst {
+  0%   { transform: scale(1); opacity: 1; }
+  40%  { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes buddy-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes buddy-zzz {
+  0%, 100% { opacity: 0; }
+}
+
+@keyframes buddy-zzz-float {
+  0%   { opacity: 0; transform: translateY(0) scale(0.8); }
+  30%  { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-12px) scale(1.1); }
+}
+
+// ─── Mobile ──────────────────────────────────────────────────────────────────
+@media all and ($mobile) {
+  .buddy-egg-root {
+    bottom: 16px;
+    right: 16px;
+  }
+}

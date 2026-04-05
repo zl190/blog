@@ -14,6 +14,8 @@ export const sharedPageComponents: SharedLayout = {
       ],
     }),
     Component.RunningMascot(),
+    Component.BuddyEgg(),
+    Component.CCBuddy(),
   ],
   afterBody: [
     Component.ConditionalRender({
