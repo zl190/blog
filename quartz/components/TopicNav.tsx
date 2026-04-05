@@ -47,6 +47,31 @@ TopicNav.css = `
   margin-top: 0.5rem;
 }
 
+@media (max-width: 800px) {
+  .topic-nav {
+    flex-basis: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .topic-nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .topic-nav h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .topic-nav-link {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--highlight);
+    border-radius: 12px;
+  }
+}
+
 .topic-nav h3 {
   font-size: 1rem;
   margin: 0 0 0.5rem 0;
