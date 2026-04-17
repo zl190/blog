@@ -2,7 +2,7 @@ import { FullSlug, resolveRelative } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
 
-const TOPIC_ORDER = ["AI", "Systems", "Learning"]
+const TOPIC_ORDER = ["AI", "Engineering", "Systems", "Learning"]
 
 const TopicNav: QuartzComponent = ({ fileData, allFiles, displayClass }: QuartzComponentProps) => {
   const topicCounts: Record<string, number> = {}

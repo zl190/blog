@@ -4,7 +4,7 @@ created: 2026-04-08
 date: 2026-04-10
 tags: [hooks, monitoring, silent-failure, observability, gates]
 topics:
-  - software-engineering
+  - Engineering
 qc: passed
 spec: "No-op gates create false confidence — a gate that silently passes on failure is worse than no gate. 375 hook fires with 0 enforcement entries. 3 citations (Leveson 2011, Norman 2013, Dekker 2011) + personal publish-gate-bash evidence | creator — practitioner discovering silent gate failure | engineers building enforcement infrastructure"
 ---

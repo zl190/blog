@@ -10,7 +10,7 @@ published_date: 2026-04-06
 language: en
 tags: [devops, chrome, headless, debugging, AI]
 topics:
-  - devops
+  - Engineering
 ---
 
 My server ran out of disk space on a Sunday morning. An 866GB drive, completely full. The culprit wasn't logs, wasn't Docker images, wasn't a database gone rogue. It was Chrome writing 91,470 identical 4MB telemetry files that nobody asked for and nobody would ever read.

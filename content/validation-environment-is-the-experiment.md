@@ -5,7 +5,7 @@ date: 2026-04-10
 tags: [testing, validation, hooks, isolation, experiment-design]
 topics:
   - AI
-  - software-engineering
+  - Engineering
 qc: passed
 spec: "Hook validation under contaminated environments produces 40% false-negative rate. Three failure modes: contaminated environment, no-op gate, non-actionable verdict. 5 citations (Fisher 1935, Beck 2002, Beizer 1990, Hunt & Thomas 1999, Myers 2011) + personal cc-harness validation evidence | creator — practitioner discovering experimental design principles through hook validation | engineers validating AI agent infrastructure"
 ---

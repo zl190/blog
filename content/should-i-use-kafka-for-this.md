@@ -4,7 +4,7 @@ created: 2026-04-08
 date: 2026-04-10
 tags: [infrastructure, queues, kafka, pragmatism, scale]
 topics:
-  - software-engineering
+  - Engineering
 qc: passed
 spec: "Scale rubric for message queue selection: JSONL→SQLite→Redis→Kafka by throughput. Infrastructure cosplay = adopting tooling whose complexity exceeds requirements. 5 citations (Kleppmann 2017, Kreps/Narkhede/Rao NetDB 2011, Redis, SQLite, Kreps 2013) + personal cc-remote queue evidence | creator — practitioner building 10-msg/day queue for agent delegation | engineers choosing message infrastructure"
 ---

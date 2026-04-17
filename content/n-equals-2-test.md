@@ -4,7 +4,7 @@ created: 2026-04-08
 date: 2026-04-10
 tags: [testing, debugging, bash, boundary-testing, queues]
 topics:
-  - software-engineering
+  - Engineering
 qc: passed
 spec: "N=1 tests prove code runs, N=2 tests prove it works. Two bugs (SSH stdin consumption, path shape mismatch) invisible at N=1, immediate at N=2. 3 citations (Dijkstra 1970, Beizer 1990, Myers 2011) + personal cc-remote queue evidence | creator — practitioner finding loop bugs via pointed coverage question | engineers testing sequential processing"
 ---
