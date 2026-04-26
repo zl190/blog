@@ -12,7 +12,7 @@ spec: "There are two cognitively distinct exam types — Type-A (recognize a pra
 
 # Routine vs Adaptive: The Exam Mismatch Most Education Systems Make
 
-A graduate student pushed back on me last week, mid-Socratic-grilling, while we were working through a BGP routing project: *"Just give me the template. I'll do the trial-and-error inside it."*
+A graduate student pushed back on me last week, mid-Socratic-grilling, while we were working through a hands-on engineering project: *"Just give me the template. I'll do the trial-and-error inside it."*
 
 He was right. I had been running the wrong kind of exam on him. Not "wrong" as in "too hard" — wrong as in *categorically the wrong substrate*. The mistake forced me to articulate something I now think most education systems get backwards at scale.
 
@@ -31,7 +31,7 @@ The deepest mistake teachers make — myself included — is treating exam type 
 
 That's wrong. Type-A and Type-B run on different cognitive substrates.
 
-Type-A measures *automatized procedural fluency*. The musician doesn't think about scales; the mathematician doesn't think about algebraic manipulation; the BGP engineer doesn't think about parsing AS-paths. The work has been chunked into working-memory-free moves. That free working memory is what makes higher-order reasoning possible at all.
+Type-A measures *automatized procedural fluency*. The musician doesn't think about scales; the mathematician doesn't think about algebraic manipulation; the seasoned engineer doesn't think about parsing protocol headers. The work has been chunked into working-memory-free moves. That free working memory is what makes higher-order reasoning possible at all.
 
 Type-B measures *recombination across domains*. To recombine, you need raw material — saturated pattern libraries from somewhere. Either you've drilled the patterns inside the test domain, or you're borrowing them from a domain you drilled elsewhere (chess to math, literature to law, music to programming). Either way, the substrate has to exist before recombination can happen.
 

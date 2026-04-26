@@ -11,7 +11,7 @@ spec: "LLMs solve syntax but not semantics; the semantic layer encodes organizat
 
 # The Semantic Layer Is the Type System for Data
 
-A student asked me last week, while we were grinding through Task 1C of a BGP routing assignment: *"If GroupBy plus Aggregate plus Top-K covers eighty percent of data analysis tasks, and LLMs already write SQL fluently, why isn't there a working end-to-end auto-pipeline yet?"*
+*"If GroupBy plus Aggregate plus Top-K covers eighty percent of data analysis tasks, and LLMs already write SQL fluently, why isn't there a working end-to-end auto-pipeline yet?"*
 
 It's the right question. The answer reframed how I think about every "AI data analyst" product I've evaluated this year. Here it is: **LLMs only solve syntax. All the semantics still has to be written down by humans somewhere — and that somewhere is the semantic layer.** SQL is dynamic typing. The semantic layer is its type annotations. Without them, AI guesses. And silent guesses produce confidently-wrong dashboards.
 
@@ -55,19 +55,19 @@ Look at any "AI data analyst" product on the market right now — [Hex Magic](ht
 
 ## A concrete failure mode
 
-I was teaching a graduate networking class last week. The assignment was Task 1C of the CS 6250 BGP project: given a corpus of routing snapshots, find the autonomous system whose advertised prefix count grew the most over the observation window.
+I was tutoring a student through a graduate-level data analysis problem last week. The shape: given a corpus of historical snapshots from an operational system, identify which entity in the system grew the most over the observation window.
 
-Imagine handing this to a naive LLM with the data and the prompt. Here's what would plausibly happen:
+Imagine handing this to a naive LLM with the raw data and the prompt. Here's what would plausibly happen:
 
-- It picks `path[0]` (the peer AS) as the originating AS, instead of `path[-1]` (the actual origin). Wrong by domain convention, right by string-indexing intuition.
-- It splits the AS-path token `{7829,14265}` on the comma. Wrong — by [RFC 4271](https://datatracker.ietf.org/doc/html/rfc4271), that's an AS_SET and it's atomic.
-- It uses cumulative prefix counts across all snapshots, instead of "first-appearance count to last-appearance count." Wrong by problem spec.
-- It uses absolute prefix-count diff instead of percentage. Wrong by problem spec.
-- It forgets the divide-by-zero edge case where `first_count = 0`.
+- It picks the wrong end of a path-like identifier field as the entity. Domain convention says "rightmost token wins"; string-indexing intuition says "leftmost." Silent flip.
+- It naively splits a composite identifier on an inner delimiter, fragmenting a token that the protocol spec defines as atomic. The decomposition looks reasonable; it's wrong.
+- It uses cumulative counts across the whole window, instead of "first-appearance vs last-appearance" comparison. Both are valid framings; only one is what the problem actually asks.
+- It uses an absolute diff instead of a percentage growth. Both reasonable; one specified.
+- It forgets the divide-by-zero edge case where the baseline count is zero.
 
 Five silent errors. All from missing domain semantics. The query compiles. The query runs. The query returns a number. The number is wrong, and nothing in the pipeline tells you so.
 
-A semantic layer for BGP would encode `origin_as = path[-1]`, `aggregate_set = single_unit`, `growth_metric = (last - first) / first`, with explicit handling of the zero case. The LLM, given that context, can write correct code on top — because now the ambiguity is resolved upstream of code generation, by humans who knew what they were doing.
+A semantic layer for this domain would encode the rules upfront — which field is the entity identifier, which composite tokens are atomic, which growth formula applies, and how to treat the zero-baseline case. With those rules captured, an LLM can write correct code on top — because the ambiguity is resolved upstream of code generation, by humans who knew what they were doing.
 
 ## The TypeScript moment for analytics
 
@@ -89,7 +89,7 @@ Data is going through the same evolution, about a decade behind. SQL is dynamic.
 |---|---|---|
 | 2026 (now) | ~30% | Data semantics, metric design, trust audit |
 | +3 years | ~60% (with semantic layer) | Cross-domain analysis, new metric design |
-| +5–10 years | ~80% (standard domains: e-com, SaaS) | Edge domains (BGP, healthcare, legal), strategic value judgment |
+| +5–10 years | ~80% (standard domains: e-com, SaaS) | Edge domains (specialized infrastructure, healthcare, legal), strategic value judgment |
 | Forever | <100% | "Which metric matters" is value judgment, not calculation |
 
 The remaining twenty percent stays human work because **deciding what to measure is responsibility-bearing, not technical.** A model can compute any metric you specify. It cannot tell you which metric will keep you out of a courtroom.
