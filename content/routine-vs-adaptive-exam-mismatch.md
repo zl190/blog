@@ -1,5 +1,6 @@
 ---
 title: "Routine vs Adaptive: The Exam Mismatch Most Education Systems Make"
+draft: true
 date: 2026-04-26
 created: 2026-04-26
 tags: [education, learning, expertise, cognitive-load-theory, pedagogy]
