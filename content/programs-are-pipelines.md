@@ -6,16 +6,16 @@ tags: [software-engineering, data-structures, programming, systems-thinking]
 topics:
   - Engineering
 qc: passed
-spec: "Software is shape-transformation pipelines; the senior-vs-junior gap is choosing shapes so dominant queries become O(1); the cynical 'I just move data around' joke is the deepest engineering truth | practitioner re-deriving Linus/Pike/Brooks/Knuth from a tutoring session | engineers who suspect they're stuck on the wrong abstraction"
+spec: "Software is shape-transformation pipelines; the senior-vs-junior gap is choosing shapes so dominant queries become O(1); the cynical 'I just move data around' joke is the deepest engineering truth | practitioner re-deriving Linus/Pike/Brooks/Knuth from a debugging session | engineers who suspect they're stuck on the wrong abstraction"
 ---
 
 # Programs Are Pipelines: Why "I Just Move Data Around" Is the Whole Job
 
-A graduate student I was tutoring on a hands-on data analysis problem last week stopped mid-debugging and said, with the resigned tone of someone who had been staring at a stack trace too long: *"我天天就是把数据从东头搬到西头。"* I just move data from one place to another. Then back again.
+I caught myself thinking this last week, mid-debug, with the resigned tone of someone who had been staring at a stack trace too long: *"我天天就是把数据从东头搬到西头。"* I just move data from one place to another. Then back again.
 
-He meant it as a complaint. A self-deprecating shrug at the gap between what he thought programming was — *cathedral construction*, *algorithmic insight* — and what it actually felt like in his hands: load JSON, parse it, regroup it, write CSV, repeat.
+It started as a complaint. A self-deprecating shrug at the gap between what I thought programming was — *cathedral construction*, *algorithmic insight* — and what it actually felt like in my hands: load JSON, parse it, regroup it, write CSV, repeat.
 
-He was right. He just didn't know yet that he had stumbled onto the trade. The cynical "I'm a CRUD monkey" joke is the deepest engineering truth I know, and learning to do that *well* — to choose the right shapes, in the right order, so the dominant query becomes a single dictionary lookup — is the entire job. This post is what I should have told him.
+The complaint turned out to be the trade. The cynical "I'm a CRUD monkey" joke is the deepest engineering truth I know, and learning to do it *well* — to choose the right shapes, in the right order, so the dominant query becomes a single dictionary lookup — is the entire job. This post is what I wish someone had said to me in plainer terms a year earlier.
 
 ## The thesis in one sentence
 
@@ -61,9 +61,9 @@ That ordering is a corollary of Knuth. You do not know what is slow until it wor
 
 These five quotes describe one practice from five angles. I find that students who are stuck on a problem are usually stuck because they have skipped one of these layers — most often the first one.
 
-## The running example: a shape-choice tutorial in miniature
+## The running example, in miniature
 
-Back to the student. The problem he was working on, stripped of jargon: given a corpus of timestamped snapshots of an operational system, identify which entity inside the system grew the most across the observation window. Standard "first-appearance vs last-appearance, then rank" pattern. Nothing exotic.
+The problem on my screen, stripped of jargon: given a corpus of timestamped snapshots of an operational system, identify which entity inside the system grew the most across the observation window. Standard "first-appearance vs last-appearance, then rank" pattern. Nothing exotic.
 
 He had reached for a flat dictionary keyed by `(entity_id, snapshot_timestamp) -> set_of_records`. It worked for the first lookup he wrote. Then he needed to ask "for this entity, give me all snapshots." That query, on his shape, was an O(n) scan over the entire corpus. Every. Single. Time.
 
@@ -161,13 +161,13 @@ Same shape every time. Engineering progress, in any domain I have watched, is th
 
 The boundary between "tacit and re-discovered every time" and "explicit and reusable" is where engineering value lives. Move the boundary, and you have done your job.
 
-## What I'd tell the student now
+## What I'd write down for my past self now
 
-If I had been faster on my feet that afternoon, here is what I would have said when he made his "I just move data around" joke:
+If I had been clearer about all this six months earlier, here is what I would have stuck on the wall the first time the "I just move data around" joke hit:
 
-You're right. That is the job. The job is also exactly as hard as your seniors make it look — which is to say, very. The hard part is not the moving. The hard part is, at every step of the move, picking a shape that makes the *next* step cheap, and being honest with yourself about what your dominant query actually is rather than what you wish it were.
+You're right. That is the job. The job is also exactly as hard as the seniors make it look — which is to say, very. The hard part is not the moving. The hard part is, at every step of the move, picking a shape that makes the *next* step cheap, and being honest about what the dominant query actually is rather than what you wish it were.
 
-If you do that consistently, in five years your code will look "boring" — flat, obvious, no clever tricks — and people will ask why your services keep working when theirs don't. The answer is not magic. It is that you decided, every time you defined a variable, what shape it would be, and you decided based on what queries the next stage would run.
+Do that consistently, and in five years the code looks "boring" — flat, obvious, no clever tricks — and people ask why your services keep working when theirs don't. The answer is not magic. It is that you decided, every time you defined a variable, what shape it would be, and you decided based on what queries the next stage would run.
 
 That is the trade. The Linus quote, the Pike quote, the Brooks quote, the Knuth quote, the Beck quote — they are five people pointing at the same single practice from five angles. The practice is: shape first, code second, optimize last, and never lie to yourself about which query is dominant.
 

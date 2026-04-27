@@ -8,14 +8,16 @@ topics:
   - Education
   - Learning
 qc: passed
-spec: "There are two cognitively distinct exam types — Type-A (recognize a practiced pattern) and Type-B (creative recombination); sequencing them wrong (Type-B without Type-A saturation) is the design flaw behind both Chinese and American education's failure on the median learner | practitioner re-deriving Hatano & Inagaki 1986 from a teaching incident | educators, parents, and learning-system designers"
+spec: "There are two cognitively distinct exam types — Type-A (recognize a practiced pattern) and Type-B (creative recombination); sequencing them wrong (Type-B without Type-A saturation) is the design flaw behind both Chinese and American education's failure on the median learner | practitioner re-deriving Hatano & Inagaki 1986 from a learning frustration | educators, parents, and learning-system designers"
 ---
 
 # Routine vs Adaptive: The Exam Mismatch Most Education Systems Make
 
-A graduate student pushed back on me last week, mid-Socratic-grilling, while we were working through a hands-on engineering project: *"Just give me the template. I'll do the trial-and-error inside it."*
+*"Just give me the template. I'll do the trial-and-error inside it."*
 
-He was right. I had been running the wrong kind of exam on him. Not "wrong" as in "too hard" — wrong as in *categorically the wrong substrate*. The mistake forced me to articulate something I now think most education systems get backwards at scale.
+I caught myself thinking this last week, mid-grind through a hands-on engineering problem, with the kind of frustration that makes you want to flip the table. The Socratic-grilling style I was being put through — *what do you think the data structure should be?* — wasn't pulling answers out of me. It was just consuming working memory I didn't have to spare.
+
+The reaction surprised me. I'd long subscribed to the "creative exploration over rote drill" view of learning. But there I was, the person who reads cognitive science papers for fun, asking for the template instead of the question. Why? The answer crystallized over the next few minutes and forced me to articulate something I now think most education systems get backwards at scale.
 
 Here's the claim: **there are two cognitively distinct kinds of exam, and almost every system mismatches them to the wrong learner at the wrong time.**
 
@@ -24,11 +26,11 @@ Here's the claim: **there are two cognitively distinct kinds of exam, and almost
 
 With enough Type-A saturation in the relevant domain, Type-B is generative — the learner has raw material to recombine. Without that foundation, Type-B is *harmful*. It conflates "lacks saturated patterns" with "lacks creativity," demoralizes the median learner, and quietly rewards whoever already had Type-A coverage from outside the system.
 
-This isn't a new idea. I re-derived it from a teaching frustration and then realized [Hatano and Inagaki had named it in 1986](https://www.researchgate.net/publication/235984098_Two_courses_of_expertise) — **routine expertise vs adaptive expertise.** What I think is less appreciated, and what I want to argue here, is that the two largest education systems on earth fail in *opposite* directions on this axis. And the cure isn't more or less rigor. It's sequencing.
+This isn't a new idea. I re-derived it from a learning frustration and then realized [Hatano and Inagaki had named it in 1986](https://www.researchgate.net/publication/235984098_Two_courses_of_expertise) — **routine expertise vs adaptive expertise.** What I think is less appreciated, and what I want to argue here, is that the two largest education systems on earth fail in *opposite* directions on this axis. And the cure isn't more or less rigor. It's sequencing.
 
 ## The two substrates are not "easy vs hard"
 
-The deepest mistake teachers make — myself included — is treating exam type as a difficulty knob. Type-A is "easy" (just compute), Type-B is "hard" (think creatively). So if you want to raise the bar, you swap in more Type-B.
+The deepest mistake learners and teachers both make is treating exam type as a difficulty knob. Type-A is "easy" (just compute), Type-B is "hard" (think creatively). So if you want to raise the bar, you swap in more Type-B.
 
 That's wrong. Type-A and Type-B run on different cognitive substrates.
 
@@ -80,7 +82,7 @@ Three concrete moves, and one falsifiable prediction.
 
 1. **Diagnostic-gate Type-B exposure on a per-domain Type-A score**, not on grade level or cohort. The gate is at the *sub-topic* level, not the course level. A student can be Type-B-ready in algebra and Type-A-deficient in fractions simultaneously. Treating "10th grade" as the unit of progression collapses this signal.
 
-2. **Make Type-A saturation visible to the learner.** Mastery dashboards (the Khan Academy / ALEKS pattern) so that "I haven't mastered this yet" replaces "I'm not creative." This single reframe is, in my experience tutoring, worth more than any amount of pep talk.
+2. **Make Type-A saturation visible to the learner.** Mastery dashboards (the Khan Academy / ALEKS pattern) so that "I haven't mastered this yet" replaces "I'm not creative." This single reframe is, in my own experience, worth more than any amount of pep talk.
 
 3. **Use Type-B exams formatively, not summatively**, until per-domain saturation is confirmed. The current high-stakes Type-B exam — high-school AP free-response, college admission essays, the Chinese 高考's open-ended sections — is exactly the wrong loop. It punishes students for substrate gaps under the label of measuring creativity.
 

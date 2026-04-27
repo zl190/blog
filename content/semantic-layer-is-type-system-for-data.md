@@ -26,7 +26,7 @@ Every "natural language to analytics" task has four sources of vagueness. LLMs s
 | Metric ambiguity | "growth" — absolute? percent? rate? rate-of-rate? | No — it guesses |
 | Trust and audit | is the result actually correct? | No — it self-affirms |
 
-Layers two through four are exactly what a semantic layer encodes. The student's question carried a hidden assumption: that language is the bottleneck. It isn't. The bottleneck is *organizational consensus on meaning*, which language merely transmits.
+Layers two through four are exactly what a semantic layer encodes. The question carried a hidden assumption: that language is the bottleneck. It isn't. The bottleneck is *organizational consensus on meaning*, which language merely transmits.
 
 ## The same animal under different names
 
@@ -55,7 +55,7 @@ Look at any "AI data analyst" product on the market right now — [Hex Magic](ht
 
 ## A concrete failure mode
 
-I was tutoring a student through a graduate-level data analysis problem last week. The shape: given a corpus of historical snapshots from an operational system, identify which entity in the system grew the most over the observation window.
+I was working through a hands-on data analysis problem last week. The shape: given a corpus of historical snapshots from an operational system, identify which entity in the system grew the most over the observation window.
 
 Imagine handing this to a naive LLM with the raw data and the prompt. Here's what would plausibly happen:
 
