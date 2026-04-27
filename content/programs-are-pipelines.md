@@ -11,7 +11,7 @@ spec: "Software is shape-transformation pipelines; the senior-vs-junior gap is c
 
 # Programs Are Pipelines: Why "I Just Move Data Around" Is the Whole Job
 
-I caught myself thinking this last week, mid-debug, with the resigned tone of someone who had been staring at a stack trace too long: *"我天天就是把数据从东头搬到西头。"* I just move data from one place to another. Then back again.
+I caught myself thinking this last week, mid-debug, with the resigned tone of someone who had been staring at a stack trace too long: *all I do is move data from one place to another, and then back again.*
 
 It started as a complaint. A self-deprecating shrug at the gap between what I thought programming was — *cathedral construction*, *algorithmic insight* — and what it actually felt like in my hands: load JSON, parse it, regroup it, write CSV, repeat.
 
@@ -80,7 +80,7 @@ All four hold the *same* logical data. The cost of his dominant query — "every
 
 We changed two lines (`defaultdict(lambda: defaultdict(set))` instead of a flat dict) and his analysis went from a sluggish forty seconds to under a second. Same data. Same logic. Different shape. *That* is the trade.
 
-The decision rule that fell out of the session, in his own words: *"我最常做哪种 query，决定了我用哪个 data structure."* What query do I run most often? That picks the shape. Not "which one is cleaner." Not "which one I learned in CS101." Whichever shape makes the dominant query O(1).
+The decision rule that fell out of the session: *which query I run most often decides which data structure I reach for.* What query do I run most often? That picks the shape. Not "which one is cleaner." Not "which one I learned in CS101." Whichever shape makes the dominant query O(1).
 
 ## Code as a pipeline of shape transforms
 
@@ -145,11 +145,11 @@ This is why Knuth's "premature optimization" matters. Step 1 cannot be optimized
 
 It is also why "Make it work, make it right, make it fast" is the right ordering and the only ordering. *Right* requires *working* (you can't fix what doesn't run). *Fast* requires *right* (you can't optimize what's wrong without locking in the wrongness). The order is not a preference. It is a precedence relation in the dependency graph of engineering effort.
 
-## The母题: codify what can be codified
+## The mother-pattern: codify what can be codified
 
 I wrote a different post earlier this month called [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data). Surface topic: why end-to-end "AI does my data analysis" products are still aspirational despite LLMs being fluent at SQL. The argument: LLMs solve syntax; semantics — what counts as a "user," what "active" means, which growth metric matters — has to be written down explicitly by humans, and that written-down place is the semantic layer.
 
-I keep noticing the same母题 (mother-pattern) underneath every engineering domain I touch: **make explicit what can be made explicit; build the codifiable substrate before you run inference on top.**
+I keep noticing the same mother-pattern underneath every engineering domain I touch: **make explicit what can be made explicit; build the codifiable substrate before you run inference on top.**
 
 In data analytics: the codifiable substrate is the semantic layer. Skip it, and the LLM guesses, and the dashboard is silently wrong.
 
@@ -175,8 +175,8 @@ That is the trade. The Linus quote, the Pike quote, the Brooks quote, the Knuth 
 
 Software is shape transformations from end to end, the senior-vs-junior gap is which shapes you pick given which queries dominate, and the "I just move data around" complaint is not cynicism — it is, accurately read, the entire definition of the work, and learning to do it well is the only career arc that compounds.
 
-If this lens is useful, I'm writing more of these as I work through the AI-meets-systems-engineering frontier from a graduate-school vantage point. **Subscribe** for the next issue — it'll likely be on the third sibling of this母题: where the codifiable substrate runs out and the genuinely tacit work begins.
+If this lens is useful, I'm writing more of these as I work through the AI-meets-systems-engineering frontier from a graduate-school vantage point. **Subscribe** for the next issue — it'll likely be on the third sibling of this mother-pattern: where the codifiable substrate runs out and the genuinely tacit work begins.
 
 ---
 
-*Further reading:* [Brooks, *The Mythical Man-Month*](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) is still the single best book on what software engineering actually is. [Pike's Notes on Programming in C](https://users.ece.utexas.edu/~adnan/pike.html) is a four-page PDF and you should read it tonight. [Knuth's *Structured Programming with go to Statements* (PDF)](https://pic.plover.com/knuth-GOTO.pdf) is where the "premature optimization" line actually comes from — read the surrounding paragraph, not the bumper sticker. [Hettinger's "Transforming Code into Beautiful, Idiomatic Python"](https://www.youtube.com/watch?v=OSGv2VnC0go) is the most practical demonstration of "shape choice = O(1) lookup" I know in any language. And the sibling post — [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data) — works the same母题 from the analytics side.
+*Further reading:* [Brooks, *The Mythical Man-Month*](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) is still the single best book on what software engineering actually is. [Pike's Notes on Programming in C](https://users.ece.utexas.edu/~adnan/pike.html) is a four-page PDF and you should read it tonight. [Knuth's *Structured Programming with go to Statements* (PDF)](https://pic.plover.com/knuth-GOTO.pdf) is where the "premature optimization" line actually comes from — read the surrounding paragraph, not the bumper sticker. [Hettinger's "Transforming Code into Beautiful, Idiomatic Python"](https://www.youtube.com/watch?v=OSGv2VnC0go) is the most practical demonstration of "shape choice = O(1) lookup" I know in any language. And the sibling post — [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data) — works the same mother-pattern from the analytics side. (Karl Hughes' [*The Bulk of Software Engineering Is Just Plumbing*](https://www.karllhughes.com/posts/plumbing) is the canonical earlier statement of the same sentiment, if you want the receipts.)

@@ -54,7 +54,7 @@ The productive-failure literature ([Manu Kapur's 2008–2016 work](https://manuk
 
 Here's where the framework earns its keep. Two large education systems fail in opposite directions on this axis, and both failures masquerade as something else.
 
-**The Chinese system has world-class Type-A pipelines.** Algebra, mechanics, classical-Chinese parsing — drilled to saturation with frightening efficiency. It then bolts Type-B-style "innovative" or "open-ended" items onto its highest-stakes exams: the 高考 creative items, olympiad selection rounds, "open-ended" interview questions for top schools. The problem is that these Type-B items are often drawn from olympiad pattern families that the median student has never seen the library for. Students who attended olympiad tracks, attended top urban schools, or had engineer parents do well. The rest learn that "creativity" is something they don't have. The system identifies a few prepared geniuses and quietly *breaks* the rest.
+**The Chinese system has world-class Type-A pipelines.** Algebra, mechanics, classical-Chinese parsing — drilled to saturation with frightening efficiency. It then bolts Type-B-style "innovative" or "open-ended" items onto its highest-stakes exams: the Gaokao creative items, olympiad selection rounds, "open-ended" interview questions for top schools. The problem is that these Type-B items are often drawn from olympiad pattern families that the median student has never seen the library for. Students who attended olympiad tracks, attended top urban schools, or had engineer parents do well. The rest learn that "creativity" is something they don't have. The system identifies a few prepared geniuses and quietly *breaks* the rest.
 
 **The American median public-school system has loose Type-A discipline.** Multi-digit arithmetic fluency, fraction operations, algebraic manipulation — all under-enforced. Type-B exposure ("explore the problem your own way," "discovery-based learning") gets layered on top without diagnostic checks on whether Type-A is in place. The middle-class workaround is to backfill Type-A privately, via Kumon, paid tutoring, or college-educated parents. Lower-class students lose both layers, and the gap compounds. The "math is creative, not procedural" rhetoric is true at the expert level and damaging at the median level.
 
@@ -66,7 +66,7 @@ The positive control is conservatory pedagogy. Conservatories solved this a cent
 
 I wrote a post earlier this month called [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data). On the surface it's a different topic — why "AI does my data analysis end-to-end" is still aspirational despite LLMs writing fluent SQL. The argument was that LLMs only solve syntax. Organizational meaning — what counts as a "user," what "active" means, which growth metric matters — has to be written down explicitly somewhere by humans. That somewhere is the semantic layer.
 
-The two posts share a母题 (a mother-pattern) that I keep noticing in different domains: **what can be codified vs what cannot.**
+The two posts share a mother-pattern that I keep noticing in different domains: **what can be codified vs what cannot.**
 
 In the data world: SQL is dynamic; semantic layer is its type annotations. Without the explicit substrate, the LLM guesses, and silent guesses produce confidently-wrong dashboards. The engineering move is to *first build the codifiable substrate*, then run inference on top.
 
@@ -74,7 +74,7 @@ In the education world: drilled patterns are codifiable; creative recombination 
 
 Both systems fail when you skip the substrate and demand inference. Both produce stratified outcomes that get attributed to inherent quality (model capability / student talent) when the actual cause is missing infrastructure. And in both cases, the codifiable layer is the boring, expensive, organizational-alignment work that no one wants to fund — but everything downstream depends on.
 
-The recurring shape: 明确 vs 隐含, 可教 vs 不可教, 练过 vs 没练过. What can be made explicit, written down, drilled, audited — versus what genuinely requires tacit experience, recombination, or value judgment to resolve. Engineering progress, in any domain I've watched, comes from *moving the boundary*: taking another slice of the previously-tacit and codifying it. Type systems did this for programming. Semantic layers are doing this for data. Mastery checklists do it for learning. The work is unglamorous and the payoff is structural.
+The recurring shape: explicit vs implicit, teachable vs not, practiced vs not. What can be made explicit, written down, drilled, audited — versus what genuinely requires tacit experience, recombination, or value judgment to resolve. Engineering progress, in any domain I've watched, comes from *moving the boundary*: taking another slice of the previously-tacit and codifying it. Type systems did this for programming. Semantic layers are doing this for data. Mastery checklists do it for learning. The work is unglamorous and the payoff is structural.
 
 ## What a better-designed exam regime looks like
 
@@ -84,7 +84,7 @@ Three concrete moves, and one falsifiable prediction.
 
 2. **Make Type-A saturation visible to the learner.** Mastery dashboards (the Khan Academy / ALEKS pattern) so that "I haven't mastered this yet" replaces "I'm not creative." This single reframe is, in my own experience, worth more than any amount of pep talk.
 
-3. **Use Type-B exams formatively, not summatively**, until per-domain saturation is confirmed. The current high-stakes Type-B exam — high-school AP free-response, college admission essays, the Chinese 高考's open-ended sections — is exactly the wrong loop. It punishes students for substrate gaps under the label of measuring creativity.
+3. **Use Type-B exams formatively, not summatively**, until per-domain saturation is confirmed. The current high-stakes Type-B exam — high-school AP free-response, college admission essays, the Gaokao's open-ended sections — is exactly the wrong loop. It punishes students for substrate gaps under the label of measuring creativity.
 
 The falsifiable prediction: a public-school middle-math program that gates inquiry-based Type-B problem-solving on per-topic Type-A mastery checks (think "Khan Academy mastery ≥ 85% → IBL session") will produce a *larger* effect on the bottom quartile than on the top quartile. This reverses the usual sign of "innovative pedagogy" interventions, whose gains historically concentrate at the top. If someone runs that experiment and the gains *don't* concentrate at the bottom, my framework is wrong.
 
@@ -92,8 +92,8 @@ The falsifiable prediction: a public-school middle-math program that gates inqui
 
 Most education systems administer the wrong type of exam at the wrong time, and the wrongness isn't difficulty — it's substrate; build the codifiable Type-A layer first, then test the recombinant Type-B layer on top, just like every other engineering domain that learned this lesson the hard way.
 
-If this lens is useful, I'm writing more of these as I work through the AI-meets-systems-engineering frontier from a graduate-school vantage point. **Subscribe** for the next issue — it'll likely be on the third sibling of this母题: the difference between explicit measurement and tacit derivative, in a domain that surprised me.
+If this lens is useful, I'm writing more of these as I work through the AI-meets-systems-engineering frontier from a graduate-school vantage point. **Subscribe** for the next issue — it'll likely be on the third sibling of this mother-pattern: the difference between explicit measurement and tacit derivative, in a domain that surprised me.
 
 ---
 
-*Further reading:* [Hatano & Inagaki (1986)](https://www.researchgate.net/publication/235984098_Two_courses_of_expertise) is the foundational paper. [Bloom (1984)](https://web.mit.edu/5.95/readings/bloom-two-sigma.pdf) is the 2-sigma source. [Sweller, Ayres, and Kalyuga's *Cognitive Load Theory*](https://link.springer.com/book/10.1007/978-1-4419-8126-4) is the modern synthesis with the expertise-reversal evidence. [Manu Kapur's productive-failure work](https://manukapur.com/research/) is the most honest counter-evidence and ends up reinforcing the sequencing argument. And the sibling post — [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data) — works the same母题 from the other side.
+*Further reading:* [Hatano & Inagaki (1986)](https://www.researchgate.net/publication/235984098_Two_courses_of_expertise) is the foundational paper. [Bloom (1984)](https://web.mit.edu/5.95/readings/bloom-two-sigma.pdf) is the 2-sigma source. [Sweller, Ayres, and Kalyuga's *Cognitive Load Theory*](https://link.springer.com/book/10.1007/978-1-4419-8126-4) is the modern synthesis with the expertise-reversal evidence. [Manu Kapur's productive-failure work](https://manukapur.com/research/) is the most honest counter-evidence and ends up reinforcing the sequencing argument. And the sibling post — [The Semantic Layer Is the Type System for Data](https://blog.ylab3.com/semantic-layer-is-type-system-for-data) — works the same mother-pattern from the other side.
